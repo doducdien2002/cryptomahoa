@@ -1,6 +1,9 @@
 import React from 'react';
 import ANHIMG from '../ANHIMG.jpg';
 import TestimonialCard from './TestimonialCard';
+import nhansandy from '../assets/nhansandy.png';
+import thayongnoi from '../assets/thayongnoi.png';
+import thubeo from '../assets/thubeo.png';
 const Testimonials = () => (
   <div className="section testimonials">
     <div className="content">
@@ -12,19 +15,19 @@ const Testimonials = () => (
             name="TRẦN VINH"
             quote="Giờ mình biết được hoàn phí giao dịch, đã giúp tôi lấy lại rất nhiều những khoản phí đóng mở lệnh,tôi trân trọng cảm ơn đội ngũ đã giúp tôi"
             date="24/04/2025"
-            imgSrc="https://w.ladicdn.com/s400x400/67dbe0216346bb0012ce3b79/avatarfeedback1-20250427035217-7hngx.jpg"
+            imgSrc={thayongnoi}
           />
           <TestimonialCard 
-            name="THO BABY"
+            name="NHÀN SANDY"
             quote="Cảm ơn bạn đội ngũ hoàn phí đã hỗ trợ mình hoàn phí giao dịch trên các sàn giao dịch Crypto. Cảm ơn bạn nhiều lắm nhé!"
             date="20/03/2025"
-            imgSrc="https://i.pinimg.com/474x/59/27/b7/5927b7575b892f98846b0f7be966005f.jpg"
+            imgSrc={nhansandy}
           />
           <TestimonialCard 
-            name="ALEX NGUYEN"
+            name="TIỂU THƯ HỌ PHẠM"
             quote="Tôi được người bạn giới thiệu qua bên bạn và tôi đã nhận được phí giao dịch, rất nhiều nhờ hoàn phí nhé. Share liền Telegram để mọi người cùng biết nha!"
             date="16/02/2025"
-            imgSrc="https://anhnail.com/wp-content/uploads/2024/10/Hinh-gai-xinh-k8-sieu-cute.jpg"
+            imgSrc={thubeo}
           />
         </div>
      <div className="contact mt-20 flex justify-center items-center gap-3">

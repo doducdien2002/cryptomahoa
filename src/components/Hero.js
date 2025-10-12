@@ -35,7 +35,7 @@ const Hero = () => (
           <a href="tel:+84965427145" className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition transform">
             📞 Hotline: 0965 427 145
           </a>
-          <a href="#" className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition transform">
+          <a href="https://zalo.me/0965427145" className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition transform">
             💬 Tư vấn Zalo
           </a>
         </div>
