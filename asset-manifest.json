@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/cryptomahoa/static/css/main.e34082ca.css",
-    "main.js": "/cryptomahoa/static/js/main.f9e1aab8.js",
+    "main.css": "/cryptomahoa/static/css/main.92ed9fe3.css",
+    "main.js": "/cryptomahoa/static/js/main.7933bd15.js",
     "static/js/453.c828b131.chunk.js": "/cryptomahoa/static/js/453.c828b131.chunk.js",
     "static/media/anhtintuc.png": "/cryptomahoa/static/media/anhtintuc.892f86ca2730e1d69db1.png",
     "static/media/ANHIMG.jpg": "/cryptomahoa/static/media/ANHIMG.cc3e448636ae82cfb713.jpg",
     "static/media/atx.png": "/cryptomahoa/static/media/atx.07fa96221db0bd9a7aba.png",
     "index.html": "/cryptomahoa/index.html",
-    "main.e34082ca.css.map": "/cryptomahoa/static/css/main.e34082ca.css.map",
-    "main.f9e1aab8.js.map": "/cryptomahoa/static/js/main.f9e1aab8.js.map",
+    "main.92ed9fe3.css.map": "/cryptomahoa/static/css/main.92ed9fe3.css.map",
+    "main.7933bd15.js.map": "/cryptomahoa/static/js/main.7933bd15.js.map",
     "453.c828b131.chunk.js.map": "/cryptomahoa/static/js/453.c828b131.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e34082ca.css",
-    "static/js/main.f9e1aab8.js"
+    "static/css/main.92ed9fe3.css",
+    "static/js/main.7933bd15.js"
   ]
 }
