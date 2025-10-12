@@ -42,7 +42,7 @@ const Footer = () => (
       <p className="text-gray-400">📍 Việt Nam</p>
       <p className="text-gray-400">📧 doducdien2002@gmail.com</p>
       <p className="text-gray-400">📞 +84 965427145</p>
-      <p className="text-gray-400">🌐 www.maobackcom.com</p>
+      <p className="text-gray-400">🌐 www.maofast.com</p>
     </div>
   </div>
 

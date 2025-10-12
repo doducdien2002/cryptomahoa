@@ -25,7 +25,7 @@ export default function Header({ onOpenContact = () => {} }) {
   <img
     src={logo}
     alt="Logo"
-    className="mr-2 h-24 object-contain" 
+    className="mr-2 h-16 max-h-full object-contain" 
   />
   MAOFAST
 </a>
