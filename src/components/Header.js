@@ -1,9 +1,10 @@
-// Header.jsx
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ⬅ thêm
 import logo from '../assets/logo.png';
+
 export default function Header({ onOpenContact = () => {} }) {
   const navigate = useNavigate();              // ⬅ khởi tạo navigate
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Quản lý trạng thái mở/đóng của menu mobile
   const linkBase =
     "px-3 py-2 text-sm font-medium text-white/90 hover:text-white transition";
 
@@ -17,20 +18,20 @@ export default function Header({ onOpenContact = () => {} }) {
     <header className="fixed top-0 left-0 z-50 w-full bg-blue-600/95 backdrop-blur shadow-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         {/* Logo */}
-      <a
-  href={`${process.env.PUBLIC_URL}/`}
-  className="text-2xl font-extrabold tracking-wide text-white hover:opacity-90 transition flex items-center"
-  style={{ lineHeight: '0' }} 
->
-  <img
-    src={logo}
-    alt="Logo"
-    className="mr-2 h-16 max-h-full object-contain" 
-  />
-  MAOFAST
-</a>
+        <a
+          href={`${process.env.PUBLIC_URL}/`}
+          className="text-2xl font-extrabold tracking-wide text-white hover:opacity-90 transition flex items-center"
+          style={{ lineHeight: '0' }} 
+        >
+          <img
+            src={logo}
+            alt="Logo"
+            className="mr-2 h-16 max-h-full object-contain" 
+          />
+          MAOFAST
+        </a>
 
-        {/* Menu */}
+        {/* Menu desktop */}
         <nav className="hidden items-center gap-6 md:flex">
           <a href={`${process.env.PUBLIC_URL}/`} className={linkBase}>
             Trang Chủ
@@ -56,13 +57,43 @@ export default function Header({ onOpenContact = () => {} }) {
 
         {/* Nút menu mobile */}
         <div className="md:hidden">
-          <button className="text-white/90 hover:text-white transition" aria-label="Open menu">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle menu khi click
+            className="text-white/90 hover:text-white transition"
+            aria-label="Open menu"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
       </div>
+
+      {/* Menu mobile */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-blue-600/95 backdrop-blur shadow-md">
+          <nav className="flex flex-col items-center py-4">
+            <a href={`${process.env.PUBLIC_URL}/`} className={`${linkBase} text-center`}>
+              Trang Chủ
+            </a>
+
+            <a href={`${process.env.PUBLIC_URL}#/services`} className={`${linkBase} text-center`}>
+              Sàn Giao Dịch
+            </a>
+
+            <a href={`${process.env.PUBLIC_URL}/`} onClick={goNews} className={`${linkBase} text-center`}>
+              Tin Tức
+            </a>
+
+            <button
+              onClick={onOpenContact}
+              className="inline-flex items-center rounded-lg bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15 hover:bg-white/20 transition mt-4"
+            >
+              Liên hệ
+            </button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

@@ -270,12 +270,12 @@ const Services = () => {
             placeholder="🔍 Tìm sàn..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full md:w-1/2 px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+            className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
           />
         </div>
 
         {/* Grid Layout for 3 columns and 2 rows */}
-        <div className="grid grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10">
           {filteredItems.slice(0, showMore ? filteredItems.length : 6).map((item, i) => (
             <div key={i} className="h-full flex flex-col justify-between bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-200 hover:shadow-yellow-300/50 hover:-translate-y-2 transition-all duration-300 p-6 text-center group">
               <div className="relative h-28 flex items-center justify-center mb-4 bg-white/80 rounded-xl overflow-hidden shadow-inner">
