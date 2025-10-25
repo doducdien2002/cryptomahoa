@@ -7,7 +7,7 @@ const Footer = () => (
     
     {/* Cột 1 */}
     <div>
-      <h3 className="text-xl font-bold text-white mb-3">HOÀN PHÍ CRYPTO</h3>
+      <h3 className="text-xl font-bold text-white mb-3">MAOFAST</h3>
       <p className="text-gray-400">🎓 Tặng khóa học miễn phí</p>
       <p className="text-gray-400">🎁 Tặng Voucher Free</p>
       <div className="flex space-x-4 mt-4">
@@ -40,7 +40,7 @@ const Footer = () => (
     <div>
       <h3 className="text-xl font-bold text-white mb-3">LIÊN HỆ</h3>
       <p className="text-gray-400">📍 Việt Nam</p>
-      <p className="text-gray-400">📧 doducdien2002@gmail.com</p>
+      <p className="text-gray-400">📧 ducdienhoanphi@gmail.com</p>
       <p className="text-gray-400">📞 +84 965427145</p>
       <p className="text-gray-400">🌐 www.maofast.com</p>
     </div>
@@ -48,7 +48,7 @@ const Footer = () => (
 
   {/* Dòng bản quyền */}
   <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
-    © 2022 HOÀN PHÍ CRYPTO. All rights reserved.
+    © 2022 MAOFAST. All rights reserved.
   </div>
 </footer>
 

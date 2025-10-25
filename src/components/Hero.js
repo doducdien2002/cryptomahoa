@@ -1,54 +1,169 @@
-import React from 'react';
-import ANHIMG from '../ANHIMG.jpg';
+import React from "react";
+import { Link } from 'react-router-dom'; // Đảm bảo đã cài react-router-dom
 
-const Hero = () => (
-  
-  <div className="section hero bg-gradient-to-r from-blue-600 to-blue-400">
-    {/* thông báo */}
-    {/* <div className="bg-yellow-300/95 text-black">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="overflow-hidden py-2">
-          <div className="marquee-track font-semibold">
-            🚀 HOÀN 40–60% PHÍ GIAO DỊCH • ⏰ Ghi có T+1 • 🔥 Quỹ ưu đãi có hạn • 💬 Liên hệ Zalo: 0965 427 145 • 
-            🚀 HOÀN 40–60% PHÍ GIAO DỊCH • ⏰ Ghi có T+1 • 🔥 Quỹ ưu đãi có hạn • 💬 Liên hệ Zalo: 0965 427 145 • 
-            🚀 HOÀN 40–60% PHÍ GIAO DỊCH • ⏰ Ghi có T+1 • 🔥 Quỹ ưu đãi có hạn • 💬 Liên hệ Zalo: 0965 427 145
+/* Thay đường dẫn ảnh nếu bạn có ảnh local:
+   import ANHIMG from "../assets/ANHIMG.jpg";
+   const ILLUSTRATION_URL = ANHIMG;
+*/
+const ILLUSTRATION_URL =
+  "https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=a6f6d6b2c8e6d8a2b6f1a4f1f4f3e2a0";
+
+const CryptoCandlesSmall = ({ size = 240, speed = 2.0, label = "CRYPTO · FX" }) => {
+  const w = size, h = size, candleW = Math.max(6, Math.round(size / 30));
+  return (
+    <div style={{ width: w, height: h }} className="relative" aria-hidden>
+      <style>{`
+        :root{--spd:${speed}s}
+        @keyframes up{0%,100%{transform:translateY(8px)}50%{transform:translateY(-4px)}}
+        @keyframes down{0%,100%{transform:translateY(-8px)}50%{transform:translateY(4px)}}
+        .candle{transition:transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease}
+        .candle:hover{transform:scale(1.1) !important; filter: brightness(1.2) drop-shadow(0 4px 8px rgba(0,0,0,0.1))}
+        .spark{stroke-dasharray:1000;stroke-dashoffset:1000;animation:draw calc(var(--spd) * 0.9) ease-in-out forwards}
+        @keyframes draw{to{stroke-dashoffset:0}}
+        @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+        @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+        @media (prefers-reduced-motion: reduce){.candle,.spark, .float{animation:none!important; transition:none}}
+      `}</style>
+
+      <div className="absolute inset-0 rounded-xl opacity-80" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), rgba(16,185,129,0.05))", boxShadow: "inset 0 0 20px rgba(255,255,255,0.2)" }} />
+
+      <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} className="relative z-10 overflow-visible">
+        <defs>
+          <linearGradient id="gG" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#d1fae5"/><stop offset="1" stopColor="#10b981"/></linearGradient>
+          <linearGradient id="gR" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#fff0f2"/><stop offset="1" stopColor="#ef4444"/></linearGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="4" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        {[0.12,0.22,0.32,0.42,0.52,0.62,0.72,0.82].map((xP,i)=>{
+          const x = Math.round(w*xP);
+          const top = Math.round(h*(0.28 + (i%3)*0.04));
+          const bot = Math.round(h*(0.52 + ((i+1)%3)*0.03));
+          const bodyH = Math.max(8, bot-top);
+          const isUp = i%2===0;
+          const fill = isUp? "url(#gG)" : "url(#gR)";
+          const anim = isUp? "up":"down";
+          const dur = `${(speed * (0.9 + (i % 3)*0.08)).toFixed(2)}s`;
+          const delay = `${(i*0.06).toFixed(2)}s`;
+          return (
+            <g key={i} className="candle" style={{ transformOrigin:`${x}px ${top+bodyH/2}px`, animation: `${anim} ${dur} ease-in-out ${delay} infinite`, filter: "url(#glow)" }}>
+              <line x1={x} x2={x} y1={top - 8} y2={bot + 8} stroke={isUp? "#34d399":"#fb7185"} strokeWidth={Math.max(1,Math.round(candleW/3))} strokeLinecap="round" opacity="0.9" />
+              <rect x={x - Math.round(candleW/2)} y={top} width={candleW} height={bodyH} rx={3} fill={fill} />
+              <rect x={x - Math.round(candleW/2)} y={top} width={candleW} height={bodyH} rx={3} fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+            </g>
+          );
+        })}
+
+        <g transform={`translate(${w*0.06},${h*0.06})`} className="spark">
+          <path d="M0,100 Q50,80 100,120 T200,90 T300,110" fill="none" stroke="url(#gG)" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+        </g>
+      </svg>
+
+      <div className="absolute top-2 left-2 text-xs font-medium text-slate-600 opacity-0 animate-pulse" style={{ animation: "pulse 2s ease-in-out infinite, fadeIn 1s forwards" }}>
+        {label}
+      </div>
+    </div>
+  );
+};
+
+const Hero = () => {
+  return (
+    <>
+      {/* Header Section */}
+     
+
+      {/* Main Content with Padding to Avoid Overlap */}
+      <main className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50 pt-20">
+        <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-6 animate-fadeIn" style={{ animation: "fadeIn 0.8s ease-out" }}>
+              <div className="inline-block bg-yellow-300 text-black px-4 py-1.5 rounded-full text-sm font-semibold shadow-md transform transition hover:scale-105">
+                CRYPTO • FOREX
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+                Hoàn phí giao dịch — <span className="text-yellow-500 drop-shadow-md">Nhanh</span> & <span className="text-emerald-500 drop-shadow-md">An toàn</span>
+              </h1>
+
+              <p className="text-lg text-slate-700 max-w-2xl leading-relaxed">
+                Chúng tôi xử lý yêu cầu nhanh chóng với KYC đơn giản. Ghi có trong 24 giờ, hỗ trợ rút tiền tự do. Cam kết minh bạch và tỷ lệ ưu đãi cao nhất.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/services" // Đường dẫn đến Services.js
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-full font-bold shadow-xl transform transition-all duration-hover:scale-105 hover:shadow-2xl"
+                  style={{ boxShadow: "0 20px 40px rgba(250,204,21,0.25)", transitionDuration: "0.3s" }}
+                >
+                  <span className="text-xl group-hover:animate-bounce">🚀</span>
+                  <span>Đăng ký & Nhận Hoàn</span>
+                  <span className="ml-2 w-2 h-2 rounded-full bg-red-400 animate-pulse" />
+                </Link>
+
+                <Link
+                  to="/news/2"
+                  className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-800 px-5 py-3 rounded-full shadow hover:shadow-lg transform transition hover:scale-105"
+                >
+                  <span>ℹ️</span> Tìm hiểu thêm về hoàn phí
+                </Link>
+              </div>
+
+              <div className="flex items-center mt-20 gap-4 text-slate-600"> {/* Thay mt-18 bằng mt-20 để tăng khoảng cách hợp lệ */}
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
+                  <div className="text-sm font-medium">Hợp tác nhiều sàn lớn</div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
+                  <div className="text-sm font-medium">Hoàn Nhanh Chóng 24/7</div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
+                  <div className="text-sm font-medium">98k người hài lòng</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 flex items-center justify-end gap-6 relative">
+              <div className="flex-shrink-0 mr-2 float" style={{ animation: "float 6s ease-in-out infinite" }}>
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20" style={{ width: 280 }}>
+                  <CryptoCandlesSmall size={240} speed={2.5} />
+                </div>
+              </div>
+
+              <div className="hidden lg:block relative float" style={{ animation: "float 8s ease-in-out infinite 2s", width: 220, perspective: "1000px" }}>
+                <div className="rounded-2xl overflow-hidden shadow-2xl transform transition hover:rotate-3d" style={{ width: 220, height: 320, transition: "transform 0.5s ease" }}>
+                  <img src={ILLUSTRATION_URL} alt="Illustration" className="w-full h-full object-cover" />
+                </div>
+
+                <div className="absolute -top-3 right-2 bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-semibold shadow-md animate-bounce">
+                  Hoàn 40–60%
+                </div>
+
+                <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-xs px-3 py-1 rounded-md shadow-lg">
+                  Đã có: <strong className="text-emerald-600">8,423</strong> người
+                </div>
+              </div>
+
+              <div className="lg:hidden mt-6 w-full flex justify-center">
+                <div className="rounded-2xl overflow-hidden shadow-xl" style={{ width: 240, height: 260 }}>
+                  <img src={ILLUSTRATION_URL} alt="Illustration" className="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div> */}
 
-    <section className="relative text-gray-900 py-20 flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6">
-      {/* Left */}
-      <div className="md:w-1/2 text-left animate-fadeInLeft">
-        <span className="uppercase text-sm tracking-wider bg-white text-blue-600 px-3 py-1 rounded-full font-semibold">
-          Website - Crypto - Forex
-        </span>
-        <h1 className="text-5xl md:text-6xl font-bold mt-5 leading-tight">
-          Hoàn phí <span className="text-black-400">Giao dịch Crypto,Forex</span>
-        </h1>
-        <p className="text-lg mt-6 text-gray-600">
-          Chúng tôi luôn nỗ lực hỗ trợ người dùng hoàn phí giao dịch trên các sàn giao dịch tiền điện tử.
-          Bạn sẽ nhận được <span className="text-black-400 font-semibold">40-60% phí</span> 
-          chỉ trong vòng 24 giờ, kèm theo rút tiền nhanh chóng.
-        </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-bounceIn">
-          <a href="tel:+84965427145" className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition transform">
-            📞 Hotline: 0965 427 145
-          </a>
-          <a href="https://zalo.me/0965427145" className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition transform">
-            💬 Tư vấn Zalo
-          </a>
-        </div>
-      </div>
-
-      {/* Right */}
-      <div className="md:w-1/2 flex justify-center relative mt-12 md:mt-0 animate-fadeInRight">
-        <div className="p-1 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-spin-slow">
-          <img src="https://tse3.mm.bing.net/th/id/OIP.s6Q43c6hfBySHW2j3K9PTAHaEo?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Người dùng" className="rounded-full w-64 h-64 object-cover hover:scale-110 transition transform" />
-        </div>
-      </div>
-    </section>
-  </div>
-);
+        <style>{`
+          @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+          @keyframes rotate-3d { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(10deg); } }
+          .hover\\:rotate-3d:hover { animation: rotate-3d 0.5s ease forwards; }
+          .duration-hover { transition-duration: 0.3s; }
+          .animate-fadeIn { animation: fadeIn 0.8s ease-out; }
+          @keyframes float { 0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(2deg)} }
+        `}</style>
+      </main>
+    </>
+  );
+};
 
 export default Hero;

@@ -40,34 +40,93 @@ const newsList = [
       <p>Liên hệ đội ngũ <strong>DUCDIENHOANPHI </strong> để nhận mã hoàn phí và được hướng dẫn chi tiết.</p>
     `,
   },
-  {
-    id: 2,
-    title: "HOÀN PHÍ GIAO DỊCH LÀ GÌ?",
-    description:
-      "Hướng dẫn chi tiết về hoàn phí giao dịch trên các sàn crypto và cách nhận ưu đãi.",
-    imgSrc:
-      "https://w.ladicdn.com/s700x550/67dbe0216346bb0012ce3b79/sukien2-20250501170052-d4azq.png",
-    content: `
-      <h2>🚀 Hoàn phí giao dịch là gì?</h2>
-      <p> <b>“Hoàn phí giao dịch”</b> trong crypto — hay còn gọi là rebate / fee rebate / trading fee cashback— là chương trình mà hoàn lại phí mà người dùng đã trả khi giao dịch (spot, futures, margin, v.v.)</p>
-      <h2>✅ Lợi ích</h2>
-      <p>Giảm chi phí giao dịch thực tế → giữ lại nhiều lợi nhuận hơn.</p>
-      <p>Không giới hạn thời gian hoặc số lượng giao dịch.</p>
-      <p>Hệ thống cập nhật và theo dõi minh bạch 24/7.</p>
+ {
+  id: 2,
+  title: "HOÀN PHÍ GIAO DỊCH LÀ GÌ?",
+  description:
+    "Tìm hiểu khái niệm hoàn phí giao dịch trong crypto, cơ chế hoạt động, lợi ích và cách nhận ưu đãi hoàn phí để tối ưu chi phí và lợi nhuận.",
+  imgSrc:
+    "https://w.ladicdn.com/s700x550/67dbe0216346bb0012ce3b79/sukien2-20250501170052-d4azq.png",
+  content: `
+    <div style="font-family:'Inter',sans-serif; line-height:1.75; color:#1f2937;">
 
-      <h2>🔐Tại sao cần hoàn phí giao dịch (KYC)</h2>
-      <p>Giúp bạn tối ưu lợi nhuận.</p>
-      <p>Giảm chi phí giao dịch</p>
-      <p>Hoàn thành nhanh chóng</p>
+      <div style="display:inline-block; background:linear-gradient(45deg,#22c55e,#3b82f6); color:#fff; padding:6px 14px; border-radius:0 10px 0 10px; font-weight:700;">
+        💸 HOÀN PHÍ GIAO DỊCH
+      </div>
 
-      <blockquote style="border-left:4px solid #16a34a; background:#f0fdf4; padding:12px; border-radius:8px; font-style:italic;">
-        “Chỉ mất 5 phút để tạo tài khoản và nhận ưu đãi hoàn phí.”
+      <h2 style="margin-top:24px; font-size:1.6rem; color:#111827;">🚀 Hoàn phí giao dịch là gì?</h2>
+      <p><strong>Hoàn phí giao dịch</strong> (<em>Trading Fee Rebate</em> hay <em>Cashback</em>) là chương trình mà <strong>sàn giao dịch hoàn trả lại cho người dùng một phần hoặc toàn bộ phí mà họ đã trả khi thực hiện lệnh giao dịch</strong>. </p>
+      <p>Nói cách khác, mỗi khi bạn giao dịch (mua, bán, hoặc mở vị thế futures, margin…), sàn sẽ trích lại một phần phí đó và gửi trả về ví của bạn dưới dạng <strong>tiền thưởng, token, hoặc USDT</strong>.</p>
+
+      <blockquote style="border-left:4px solid #22c55e; background:#f0fdf4; padding:12px; border-radius:8px; margin:20px 0; font-style:italic;">
+        “Hoàn phí giao dịch = nhận lại tiền thật từ chính những lệnh bạn đã thực hiện.”
       </blockquote>
 
-      <h2>✅ Hoàn tất</h2>
-      <p>Bạn có thể bắt đầu giao dịch và nhận hoàn phí tự động ngay sau khi xác minh thành công.</p>
-    `,
-  },
+      <h2 style="margin-top:20px; font-size:1.4rem; color:#1d4ed8;">📘 Cơ chế hoạt động của hoàn phí giao dịch</h2>
+      <p>Khi bạn giao dịch trên sàn, bạn phải trả một khoản gọi là <strong>phí giao dịch</strong> (trung bình 0.1% đối với Spot và 0.02–0.06% đối với Futures).</p>
+      <p>Khi tham gia chương trình hoàn phí, <strong>hệ thống sẽ ghi nhận tất cả lệnh giao dịch của bạn</strong> và hoàn lại một tỷ lệ nhất định — thường từ <b>10% đến 60%</b> — tùy thuộc vào cấp độ người dùng hoặc chương trình ưu đãi của sàn.</p>
+
+      <div style="background:#f9fafb; padding:12px 16px; border-radius:10px; border:1px solid #e5e7eb;">
+        <p><strong>Ví dụ:</strong> Bạn giao dịch 10.000 USDT, phí sàn là 0.1% = 10 USDT.</p>
+        <p>Nếu sàn hoàn 50%, bạn sẽ <strong>được hoàn lại 5 USDT</strong> sau mỗi giao dịch. Số tiền này thường được cộng trực tiếp vào ví Spot hoặc ví Cashback.</p>
+      </div>
+
+      <h2 style="margin-top:24px; font-size:1.4rem; color:#1d4ed8;">🎯 Phân loại hoàn phí giao dịch</h2>
+      <ul style="margin-left:20px; list-style:disc;">
+        <li><strong>Hoàn phí Spot:</strong> áp dụng cho giao dịch mua bán thông thường trên thị trường giao ngay.</li>
+        <li><strong>Hoàn phí Futures:</strong> dành cho các giao dịch hợp đồng tương lai (long/short).</li>
+        <li><strong>Hoàn phí giới thiệu:</strong> người giới thiệu (referrer) nhận % hoàn phí từ giao dịch của người được giới thiệu.</li>
+        <li><strong>Hoàn phí KOL/đại lý:</strong> mức hoàn cao hơn, thường từ 40–60%, dành cho người hợp tác quảng bá sàn.</li>
+      </ul>
+
+      <h2 style="margin-top:24px; font-size:1.4rem; color:#1d4ed8;">💡 Lợi ích khi tham gia hoàn phí</h2>
+      <ul style="margin-left:20px; list-style:disc;">
+        <li><strong>Tiết kiệm chi phí giao dịch:</strong> giúp trader giữ lại nhiều lợi nhuận hơn.</li>
+        <li><strong>Không giới hạn thời gian:</strong> hoàn phí hoạt động liên tục 24/7, minh bạch.</li>
+        <li><strong>Hỗ trợ trader lâu dài:</strong> mỗi lệnh đều mang lại giá trị, dù là nhỏ nhất.</li>
+        <li><strong>Không cần kinh nghiệm:</strong> chỉ cần tạo tài khoản, xác minh KYC và giao dịch bình thường.</li>
+      </ul>
+
+      <blockquote style="border-left:4px solid #3b82f6; background:#eff6ff; padding:12px; border-radius:8px; margin:20px 0; font-style:italic;">
+        “Đối với trader chuyên nghiệp, hoàn phí không chỉ là phần thưởng mà là chiến lược giảm chi phí giao dịch thông minh.”
+      </blockquote>
+
+      <h2 style="margin-top:24px; font-size:1.4rem; color:#1d4ed8;">🔐 Tại sao cần xác minh KYC để nhận hoàn phí?</h2>
+      <p>Hầu hết các sàn lớn như <strong>BingX</strong>, <strong>Bybit</strong>, <strong>MEXC</strong> yêu cầu xác minh danh tính (<b>KYC</b>) để đảm bảo tính bảo mật và chống gian lận khi hoàn phí. Việc này giúp:</p>
+      <ul style="margin-left:20px; list-style:disc;">
+        <li>Bảo vệ tài khoản người dùng khỏi hành vi gian lận.</li>
+        <li>Xác định người thực nhận ưu đãi chính xác.</li>
+        <li>Tăng hạn mức rút tiền và kích hoạt nhiều chương trình khuyến mãi khác.</li>
+      </ul>
+
+      <h2 style="margin-top:24px; font-size:1.4rem; color:#1d4ed8;">⚙️ Cách nhận hoàn phí giao dịch</h2>
+      <ol style="margin-left:20px; list-style:decimal;">
+        <li>Đăng ký tài khoản qua liên kết hoặc mã giới thiệu của đối tác hoàn phí (ví dụ: <b>DUCDIEN8386</b>).</li>
+        <li>Hoàn tất KYC để kích hoạt quyền hoàn phí.</li>
+        <li>Giao dịch như bình thường và hệ thống sẽ tự động hoàn phí.</li>
+      </ol>
+
+      <div style="text-align:center; margin:24px 0;">
+       
+        <p style="font-size:0.9rem; color:#4b5563; margin-top:4px;">Ví dụ: Sàn BingX hoàn tới 50% phí giao dịch cho người dùng mới</p>
+      </div>
+
+      <h2 style="margin-top:24px; font-size:1.4rem; color:#1d4ed8;">🚀 Bắt đầu nhận hoàn phí ngay hôm nay</h2>
+      <p>Thay vì để phí giao dịch “bốc hơi”, bạn hoàn toàn có thể biến chúng thành lợi nhuận thực tế. Chỉ cần vài phút để đăng ký và kích hoạt ưu đãi, bạn sẽ nhận được phần hoàn phí tự động mỗi ngày.</p>
+
+      <div style="margin-top:20px; text-align:center;">
+        <button style="background:linear-gradient(90deg,#22c55e,#16a34a); color:#fff; padding:10px 24px; border:none; border-radius:8px; font-weight:600; cursor:pointer;">
+          ĐĂNG KÝ NGAY ĐỂ NHẬN HOÀN PHÍ
+        </button>
+      </div>
+
+      <p style="margin-top:24px; color:#4b5563; font-size:0.95rem;">
+        #Crypto #HoànPhí #TradingFee #Cashback #BingX #Bybit #MEXC #Blog
+      </p>
+    </div>
+  `,
+},
+
   {
     id: 3,
     title: "TOP CÁC SÀN HỖ TRỢ HOÀN PHÍ GIAO DỊCH 2025",
@@ -172,16 +231,73 @@ const NewsPage = () => {
         </div>
 
         {/* Bình luận */}
-        <div className="mt-10 border-t pt-6">
-          <h2 className="text-xl font-semibold mb-4">💬 Bình luận</h2>
-          <textarea
-            className="w-full border rounded-lg p-3 mb-3 focus:ring-2 focus:ring-blue-400"
-            placeholder="Nhập bình luận của bạn..."
-          />
-          <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
-            Gửi bình luận
-          </button>
+      {/* Bình luận */}
+<div className="mt-10 border-t pt-6">
+  <h2 className="text-xl font-semibold mb-4">💬 Bình luận</h2>
+
+  <textarea
+    className="w-full border rounded-lg p-3 mb-3 focus:ring-2 focus:ring-blue-400"
+    placeholder="Nhập bình luận của bạn..."
+  />
+  <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+    Gửi bình luận
+  </button>
+
+  {/* Bình luận giả */}
+  <div className="mt-6 space-y-5">
+    <div className="border border-gray-200 rounded-xl p-4 shadow-sm bg-gray-50">
+      <div className="flex items-center gap-3 mb-2">
+        <img
+          src="https://i.pravatar.cc/40?img=5"
+          alt="avatar"
+          className="w-8 h-8 rounded-full"
+        />
+        <div>
+          <p className="font-semibold text-gray-800">Minh Trí</p>
+          <p className="text-xs text-gray-500">12/10/2025</p>
         </div>
+      </div>
+      <p className="text-gray-700">
+        Bài viết rất chi tiết! Mình từng không để ý tới hoàn phí, giờ thấy tiết kiệm được kha khá. Cảm ơn tác giả!
+      </p>
+    </div>
+
+    <div className="border border-gray-200 rounded-xl p-4 shadow-sm bg-gray-50">
+      <div className="flex items-center gap-3 mb-2">
+        <img
+          src="https://i.pravatar.cc/40?img=8"
+          alt="avatar"
+          className="w-8 h-8 rounded-full"
+        />
+        <div>
+          <p className="font-semibold text-gray-800">Thảo Vy</p>
+          <p className="text-xs text-gray-500">13/10/2025</p>
+        </div>
+      </div>
+      <p className="text-gray-700">
+        Mình mới biết hoàn phí có thể nhận bằng USDT, khá hay. BingX đúng là chơi lớn thật!
+      </p>
+    </div>
+
+    <div className="border border-gray-200 rounded-xl p-4 shadow-sm bg-gray-50">
+      <div className="flex items-center gap-3 mb-2">
+        <img
+          src="https://i.pravatar.cc/40?img=12"
+          alt="avatar"
+          className="w-8 h-8 rounded-full"
+        />
+        <div>
+          <p className="font-semibold text-gray-800">Đức Anh</p>
+          <p className="text-xs text-gray-500">14/10/2025</p>
+        </div>
+      </div>
+      <p className="text-gray-700">
+        Mong sàn Bybit cũng có chương trình hoàn 50% như BingX 😄 Cảm ơn web đã chia sẻ.
+      </p>
+    </div>
+  </div>
+</div>
+
       </div>
 
       {/* Sidebar */}
