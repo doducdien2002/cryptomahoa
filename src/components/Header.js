@@ -24,11 +24,11 @@ export default function Header({ onOpenContact = () => {} }) {
           style={{ lineHeight: '0' }} 
         >
           <img
-            src={logo}
-            alt="Logo"
-            className="mr-2 h-16 max-h-full object-contain" 
+            // src={logo}
+            // alt="Logo"
+            // className="mr-2 h-16 max-h-full object-contain" 
           />
-          MAOFAST
+          VID HOÀN PHÍ
         </a>
 
         {/* Menu desktop */}

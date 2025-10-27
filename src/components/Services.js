@@ -193,6 +193,7 @@ const Services = () => {
       cashback: "50",
       code: "DUCDIEN8386",
       imgSrc: "https://w.ladicdn.com/s500x500/67dbe0216346bb0012ce3b79/bingx-20250426193224-ombgf.png",
+      link: "https://www.mexc.com/vi-VN/acquisition/custom-sign-up?shareCode=mexc-VID", 
     },
     {
       title: "BITGET",
@@ -296,9 +297,14 @@ return (
               {item.title}
             </h4>
 
-            <button type="button" className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition w-full mb-4">
-              🚀 Đăng ký ngay
-            </button>
+           <a
+  href={item.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition w-full mb-4 text-center"
+>
+  🚀 Đăng ký ngay
+</a>
 
             <div className="mt-2 text-sm text-gray-600">
               <p>Hoàn {item.cashback}% phí giao dịch</p>

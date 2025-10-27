@@ -17,6 +17,7 @@ import Testimonials from "./components/Testimonials";
 import NewsPage from "./components/NewsPage";
 import Contact from "./components/contact";
 import { Toaster } from "react-hot-toast";
+import ContactWidget from "./components/ContactWidget";
 import "./App.css";
 
 // Home có auto-scroll khi nhận state {scrollTo: 'news'}
@@ -63,8 +64,10 @@ export default function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
+          
         </Routes>
         <Footer />
+        <ContactWidget />
         <Toaster position="bottom-center" reverseOrder={false} />
         <Contact open={openContact} onClose={() => setOpenContact(false)} />
       </div>
