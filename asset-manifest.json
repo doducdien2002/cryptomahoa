@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/cryptomahoa/static/css/main.10188d12.css",
-    "main.js": "/cryptomahoa/static/js/main.649772d6.js",
-    "static/js/317.b271c69f.chunk.js": "/cryptomahoa/static/js/317.b271c69f.chunk.js",
+    "main.css": "/cryptomahoa/static/css/main.7a061ff7.css",
+    "main.js": "/cryptomahoa/static/js/main.373097b3.js",
+    "static/js/453.c828b131.chunk.js": "/cryptomahoa/static/js/453.c828b131.chunk.js",
     "static/media/anhtintuc.png": "/cryptomahoa/static/media/anhtintuc.892f86ca2730e1d69db1.png",
-    "static/media/logo.png": "/cryptomahoa/static/media/logo.af73f8485c6f96774402.png",
     "static/media/thayongnoi.png": "/cryptomahoa/static/media/thayongnoi.08810a0ded4e0145db6f.png",
     "static/media/thubeo.png": "/cryptomahoa/static/media/thubeo.1b7a079977450be951f0.png",
     "static/media/nhansandy.png": "/cryptomahoa/static/media/nhansandy.5485ac85c44eca129203.png",
     "static/media/ANHIMG.jpg": "/cryptomahoa/static/media/ANHIMG.cc3e448636ae82cfb713.jpg",
     "static/media/atx.png": "/cryptomahoa/static/media/atx.07fa96221db0bd9a7aba.png",
+    "static/media/logo.png": "/cryptomahoa/static/media/logo.2f0cdd1e0d9ce4b6a725.png",
     "index.html": "/cryptomahoa/index.html",
-    "main.10188d12.css.map": "/cryptomahoa/static/css/main.10188d12.css.map",
-    "main.649772d6.js.map": "/cryptomahoa/static/js/main.649772d6.js.map",
-    "317.b271c69f.chunk.js.map": "/cryptomahoa/static/js/317.b271c69f.chunk.js.map"
+    "main.7a061ff7.css.map": "/cryptomahoa/static/css/main.7a061ff7.css.map",
+    "main.373097b3.js.map": "/cryptomahoa/static/js/main.373097b3.js.map",
+    "453.c828b131.chunk.js.map": "/cryptomahoa/static/js/453.c828b131.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.10188d12.css",
-    "static/js/main.649772d6.js"
+    "static/css/main.7a061ff7.css",
+    "static/js/main.373097b3.js"
   ]
 }
