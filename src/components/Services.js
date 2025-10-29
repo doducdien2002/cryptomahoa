@@ -252,11 +252,11 @@ const Services = () => {
   };
 
 return (
-    <section className="py-16 bg-gradient-to-b from-gray-100 to-gray-200 relative">
-      <div className="max-w-7xl mx-auto px-6 backdrop-blur-md rounded-3xl p-10 border-gray-200">
+     <section className="py-3 bg-gradient-to-b from-gray-100 to-gray-200 relative"> 
+      <div className="max-w-7xl mt--8 mx-auto px-6 backdrop-blur-md rounded-3xl p-10 border-gray-200">
         {/* Heading */}
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-semibold text-yellow-500 uppercase tracking-widest">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-semibold text-yellow-500 uppercase tracking-widest">
             SẢN PHẨM
           </h2>
           <h3 className="text-4xl font-extrabold mt-3 text-gray-800 drop-shadow-sm font-sans">

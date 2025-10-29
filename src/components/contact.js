@@ -72,10 +72,10 @@ export default function Contact({ open, onClose }) {
               icon="👥"
               title="Nhóm / Community"
               subtitle="Telegram"
-              main="https://t.me/Duen123"
-              actionHref="https://t.me/your_group"
+              main="https:/t.me/vidhoanphi"
+              actionHref="https://t.me/vidhoanphi"
               actionLabel="Mở Telegram"
-              onCopy={() => copy("https://t.me/your_group", "Link Telegram")}
+              onCopy={() => copy("https://t.me/vidhoanphi", "Link Telegram")}
             />
 
             {/* Hotline */}
@@ -95,9 +95,9 @@ export default function Contact({ open, onClose }) {
               title="Zalo"
               subtitle="Chat nhanh"
               main="zalo.me/0965427145"
-              actionHref="https://zalo.me/0965427145"
+              actionHref="https://zalo.me/g/xfehbq386"
               actionLabel="Mở Zalo"
-              onCopy={() => copy("https://zalo.me/0965427145", "Zalo")}
+              onCopy={() => copy("https://zalo.me/g/xfehbq386", "Zalo")}
             >
               {/* QR (tuỳ chọn) – đặt ảnh public/img/zalo-qr.png nếu có */}
               <img
@@ -113,10 +113,10 @@ export default function Contact({ open, onClose }) {
               icon="✉️"
               title="Email"
               subtitle="Hỗ trợ"
-              main="support@yourdomain.com"
-              actionHref="mailto:support@yourdomain.com"
+              main="vidhoanphi@gmail.com"
+              actionHref="mailto:vidhoanphi@gmail.com"
               actionLabel="Gửi email"
-              onCopy={() => copy("support@yourdomain.com", "Email")}
+              onCopy={() => copy("vidhoanphi@gmail.com", "Email")}
             />
           </div>
 

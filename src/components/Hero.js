@@ -1,10 +1,6 @@
 import React from "react";
-import { Link } from 'react-router-dom'; // Đảm bảo đã cài react-router-dom
+import { Link } from 'react-router-dom';
 
-/* Thay đường dẫn ảnh nếu bạn có ảnh local:
-   import ANHIMG from "../assets/ANHIMG.jpg";
-   const ILLUSTRATION_URL = ANHIMG;
-*/
 const ILLUSTRATION_URL =
   "https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=a6f6d6b2c8e6d8a2b6f1a4f1f4f3e2a0";
 
@@ -67,102 +63,86 @@ const CryptoCandlesSmall = ({ size = 240, speed = 2.0, label = "CRYPTO · FX" })
 
 const Hero = () => {
   return (
-    <>
-      {/* Header Section */}
-     
+    <main className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50 pt-4 pb-0">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6 animate-fadeIn">
+            <div className="inline-block bg-yellow-300 text-black px-4 py-1.5 rounded-full text-sm font-semibold shadow-md transform transition hover:scale-105">
+              CRYPTO • FOREX • HOÀN PHÍ
+            </div>
 
-      {/* Main Content with Padding to Avoid Overlap */}
-      <main className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50 pt-20">
-        <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 space-y-6 animate-fadeIn" style={{ animation: "fadeIn 0.8s ease-out" }}>
-              <div className="inline-block bg-yellow-300 text-black px-4 py-1.5 rounded-full text-sm font-semibold shadow-md transform transition hover:scale-105">
-                CRYPTO • FOREX
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+              Hoàn Phí Giao Dịch <span className="text-yellow-500 drop-shadow-md">Nhanh</span> & <span className="text-emerald-500 drop-shadow-md">An toàn</span>
+            </h1>
+
+            <p className="text-lg text-slate-700 max-w-2xl leading-relaxed">
+              Chúng tôi xử lý hoàn phí nhanh chóng . Ghi có trong 24 giờ, hỗ trợ rút tiền tự do. Cam kết minh bạch và tỷ lệ ưu đãi cao nhất.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/services"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-full font-bold shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              >
+                <span className="text-xl group-hover:animate-bounce">🚀</span>
+                <span>Đăng ký & Nhận Hoàn</span>
+                <span className="ml-2 w-2 h-2 rounded-full bg-red-400 animate-pulse" />
+              </Link>
+
+              <Link
+                to="/news/2"
+                className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-800 px-5 py-3 rounded-full shadow hover:shadow-lg transform transition hover:scale-105"
+              >
+                <span>ℹ️</span> Tìm hiểu thêm về hoàn phí
+              </Link>
+            </div>
+ <div className="mt-12">
+            <div className="flex flex-wrap items-center gap-10 mt-12">
+              <div className="flex items-center gap-2">
+                <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
+                <span className="text-sm font-medium">Hợp tác nhiều sàn lớn</span>
               </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
-                Hoàn phí giao dịch — <span className="text-yellow-500 drop-shadow-md">Nhanh</span> & <span className="text-emerald-500 drop-shadow-md">An toàn</span>
-              </h1>
-
-              <p className="text-lg text-slate-700 max-w-2xl leading-relaxed">
-                Chúng tôi xử lý yêu cầu nhanh chóng với KYC đơn giản. Ghi có trong 24 giờ, hỗ trợ rút tiền tự do. Cam kết minh bạch và tỷ lệ ưu đãi cao nhất.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/services" // Đường dẫn đến Services.js
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-full font-bold shadow-xl transform transition-all duration-hover:scale-105 hover:shadow-2xl"
-                  style={{ boxShadow: "0 20px 40px rgba(250,204,21,0.25)", transitionDuration: "0.3s" }}
-                >
-                  <span className="text-xl group-hover:animate-bounce">🚀</span>
-                  <span>Đăng ký & Nhận Hoàn</span>
-                  <span className="ml-2 w-2 h-2 rounded-full bg-red-400 animate-pulse" />
-                </Link>
-
-                <Link
-                  to="/news/2"
-                  className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-800 px-5 py-3 rounded-full shadow hover:shadow-lg transform transition hover:scale-105"
-                >
-                  <span>ℹ️</span> Tìm hiểu thêm về hoàn phí
-                </Link>
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
+                <span className="text-sm font-medium">Hoàn Nhanh Chóng 24/7</span>
               </div>
-
-              <div className="flex items-center mt-20 gap-4 text-slate-600"> {/* Thay mt-18 bằng mt-20 để tăng khoảng cách hợp lệ */}
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
-                  <div className="text-sm font-medium">Hợp tác nhiều sàn lớn</div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
-                  <div className="text-sm font-medium">Hoàn Nhanh Chóng 24/7</div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
-                  <div className="text-sm font-medium">98k người hài lòng</div>
-                </div>
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
+                <span className="text-sm font-medium">98k người hài lòng</span>
+              </div>
+            </div>
+          </div>
+</div>
+          <div className="lg:col-span-5 flex items-center justify-end gap-6 relative">
+            <div className="flex-shrink-0 mr-2 float" style={{ animation: "float 6s ease-in-out infinite" }}>
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20" style={{ width: 280 }}>
+                <CryptoCandlesSmall size={240} speed={2.5} />
               </div>
             </div>
 
-            <div className="lg:col-span-5 flex items-center justify-end gap-6 relative">
-              <div className="flex-shrink-0 mr-2 float" style={{ animation: "float 6s ease-in-out infinite" }}>
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20" style={{ width: 280 }}>
-                  <CryptoCandlesSmall size={240} speed={2.5} />
-                </div>
+            <div className="hidden lg:block relative float" style={{ animation: "float 8s ease-in-out infinite 2s", width: 220, perspective: "1000px" }}>
+              <div className="rounded-2xl overflow-hidden shadow-2xl transform transition hover:rotate-3d" style={{ width: 220, height: 320 }}>
+                <img src={ILLUSTRATION_URL} alt="Illustration" className="w-full h-full object-cover" />
               </div>
 
-              <div className="hidden lg:block relative float" style={{ animation: "float 8s ease-in-out infinite 2s", width: 220, perspective: "1000px" }}>
-                <div className="rounded-2xl overflow-hidden shadow-2xl transform transition hover:rotate-3d" style={{ width: 220, height: 320, transition: "transform 0.5s ease" }}>
-                  <img src={ILLUSTRATION_URL} alt="Illustration" className="w-full h-full object-cover" />
-                </div>
-
-                <div className="absolute -top-3 right-2 bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-semibold shadow-md animate-bounce">
-                  Hoàn 40–60%
-                </div>
-
-                <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-xs px-3 py-1 rounded-md shadow-lg">
-                  Đã có: <strong className="text-emerald-600">8,423</strong> người
-                </div>
+              <div className="absolute -top-3 right-2 bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-semibold shadow-md animate-bounce">
+                Hoàn 40–60%
               </div>
 
-              <div className="lg:hidden mt-6 w-full flex justify-center">
-                <div className="rounded-2xl overflow-hidden shadow-xl" style={{ width: 240, height: 260 }}>
-                  <img src={ILLUSTRATION_URL} alt="Illustration" className="w-full h-full object-cover" />
-                </div>
+              <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-xs px-3 py-1 rounded-md shadow-lg">
+                Đã có: <strong className="text-emerald-600">8,423</strong> người
+              </div>
+            </div>
+
+            <div className="lg:hidden mt-6 w-full flex justify-center">
+              <div className="rounded-2xl overflow-hidden shadow-xl" style={{ width: 240, height: 260 }}>
+                <img src={ILLUSTRATION_URL} alt="Illustration" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
         </div>
-
-        <style>{`
-          @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-          @keyframes rotate-3d { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(10deg); } }
-          .hover\\:rotate-3d:hover { animation: rotate-3d 0.5s ease forwards; }
-          .duration-hover { transition-duration: 0.3s; }
-          .animate-fadeIn { animation: fadeIn 0.8s ease-out; }
-          @keyframes float { 0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(2deg)} }
-        `}</style>
-      </main>
-    </>
+      </div>
+    </main>
   );
 };
 
