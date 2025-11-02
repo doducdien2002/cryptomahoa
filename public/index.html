@@ -27,11 +27,7 @@
     <link rel="manifest" href="/manifest.json" />
     <title>Hoàn Phí Crypto - Nhận Tiền Ngay!</title>
   </head>
-  <script>
-  fetch('https://vidhoanphi.crypto/api/count').then(r=>r.json()).then(d=>{
-    document.querySelector('meta[property="og:description"]').content = `Đã có ${d.total} người nhận tiền!`;
-  });
-</script>
+
   <body>
     <noscript>Bật JavaScript để dùng nhé!</noscript>
     <div id="root"></div>
