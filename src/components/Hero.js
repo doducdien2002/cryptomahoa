@@ -71,8 +71,12 @@ const Hero = () => {
               CRYPTO • FOREX • HOÀN PHÍ
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
-              Hoàn Phí Giao Dịch <span className="text-yellow-500 drop-shadow-md">Nhanh</span> & <span className="text-emerald-500 drop-shadow-md">An toàn</span>
+         <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-5xl lg:text-6xl 
+                           font-extrabold text-slate-900 leading-tight 
+                           [line-height:1.1] tracking-tight">
+              Hoàn Phí Giao Dịch <br className="xs:hidden" />
+              <span className="text-yellow-500 drop-shadow-md">Nhanh</span> &amp;
+              <span className="text-emerald-500 drop-shadow-md">An toàn</span>
             </h1>
 
             <p className="text-lg text-slate-700 max-w-2xl leading-relaxed">
