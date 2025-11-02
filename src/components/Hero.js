@@ -76,7 +76,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg text-slate-700 max-w-2xl leading-relaxed">
-              Chúng tôi xử lý hoàn phí nhanh chóng trên các sàn Crypto ,Forex. Các bạn sẽ nhận được 40-60% phí giao dịch của mình vào mỗi tháng kèm nhiều ưu đ
+              Chúng tôi xử lý hoàn phí nhanh chóng trên các sàn Crypto ,Forex. Các bạn sẽ nhận được 40-60% phí giao dịch của mình vào mỗi tháng kèm nhiều ưu đãi.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
