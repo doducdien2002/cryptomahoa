@@ -76,7 +76,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg text-slate-700 max-w-2xl leading-relaxed">
-              Chúng tôi xử lý hoàn phí nhanh chóng trên các sàn Crypto ,Forex. Các bạn sẽ nhận được 40-60% phí giao dịch của mình vào mỗi tháng kèm nhiều ưu đãi.
+              Chúng tôi xử lý hoàn phí nhanh chóng trên các sàn Crypto ,Forex. Các bạn sẽ nhận được 40-60% phí giao dịch của mình vào mỗi tháng kèm nhiều ưu đ
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -113,63 +113,69 @@ const Hero = () => {
             </div>
           </div>
 </div>
-          <div className="lg:col-span-5 flex items-center justify-end gap-6 relative">
-            <div className="flex-shrink-0 mr-2 float" style={{ animation: "float 6s ease-in-out infinite" }}>
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20" style={{ width: 280 }}>
-                <CryptoCandlesSmall size={240} speed={2.5} />
+                 {/* ==================== IMAGES ==================== */}
+                  {/* ==================== ẢNH PHẢI ==================== */}
+                   {/* ==================== CHO BÉ NHỎ XINH – DỄ THƯƠNG 100% ==================== */}
+          <div className="lg:col-span-5">
+
+            {/* ==== DESKTOP: 2 CARD NHỎ NHẮN ==== */}
+            <div className="hidden lg:flex justify-end gap-8 mt-8">
+              
+              {/* NẾN NHỎ */}
+              <div className="float" style={{ animation: "float 6s ease-in-out infinite" }}>
+                <div className="bg-white/95 rounded-3xl p-5 shadow-xl">
+                  <CryptoCandlesSmall size={220} speed={2.5} />
+                </div>
+              </div>
+
+              {/* ĐIỆN THOẠI NHỎ */}
+              <div className="float" style={{ animation: "float 7s ease-in-out infinite 1s" }}>
+                <div className="relative">
+                  <div className="w-64 rounded-3xl overflow-hidden shadow-xl border-6 border-white">
+                    <img src={ILLUSTRATION_URL} alt="Trader" className="w-full h-80 object-cover" />
+                  </div>
+
+                  {/* Badge bé bé */}
+                  <div className="absolute -top-3 -right-3 bg-yellow-400 text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg animate-bounce">
+                    Hoàn 40–60%
+                  </div>
+
+                  {/* Số bé bé */}
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="text-4xl font-black drop-shadow-lg">8,423</p>
+                    <p className="text-xs opacity-90">người đăng ký</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {/* ==== MOBILE: 1 ẢNH DỄ THƯƠNG ==== */}
+            <div className="lg:hidden mt-12 px-6">
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-xs">
+
+                  <div className="float rounded-3xl overflow-hidden shadow-xl border-6 border-white"
+                       style={{ animation: "float 7s ease-in-out infinite" }}>
+                    <img src={ILLUSTRATION_URL} alt="Hoàn phí" className="w-full h-80 object-cover" />
+                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    
+                    <div className="absolute bottom-6 left-6 text-white">
+                      <p className="text-5xl font-black drop-shadow">8,423</p>
+                      <p className="text-sm opacity-90">người đã nhận</p>
+                    </div>
+                  </div>
+
+                  {/* Badge bé xinh */}
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce z-10">
+                    Hoàn 40–60%
+                  </div>
+
+                </div>
               </div>
             </div>
 
-            <div className="hidden lg:block relative float" style={{ animation: "float 8s ease-in-out infinite 2s", width: 220, perspective: "1000px" }}>
-              <div className="rounded-2xl overflow-hidden shadow-2xl transform transition hover:rotate-3d" style={{ width: 220, height: 320 }}>
-                <img src={ILLUSTRATION_URL} alt="Illustration" className="w-full h-full object-cover" />
-              </div>
-
-              <div className="absolute -top-3 right-2 bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-semibold shadow-md animate-bounce">
-                Hoàn 40–60%
-              </div>
-
-              <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-xs px-3 py-1 rounded-md shadow-lg">
-                Đã có: <strong className="text-emerald-600">8,423</strong> người
-              </div>
-            </div>
-
-           {/* ==== MOBILE: 2 ẢNH DỌC ĐẸP LUNG LINH ==== */}
-<div className="lg:hidden mt-8 space-y-8 px-4">
-  
-  {/* CARD 1: NẾN TO + TIÊU ĐỀ */}
-  <div className="float" style={{ animation: "float 6s ease-in-out infinite" }}>
-    <div className="bg-white/95 backdrop-blur-lg rounded-3xl p-6 shadow-2xl border border-white/40">
-      <CryptoCandlesSmall size={300} speed={2.3} />
-      <p className="text-center mt-5 text-lg font-bold text-emerald-600">
-        Biểu đồ Live 24/7
-      </p>
-    </div>
-  </div>
-
-  {/* CARD 2: ẢNH + BADGE + SỐ LIỆU */}
-  <div className="float" style={{ animation: "float 7s ease-in-out infinite 1.5s" }}>
-    <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-      <img 
-        src={ILLUSTRATION_URL} 
-        alt="Hoàn phí nhanh" 
-        className="w-full h-80 object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-      
-      <div className="absolute top-4 right-4 bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce">
-        Hoàn 40–60%
-      </div>
-
-      <div className="absolute bottom-5 left-5 text-white">
-        <p className="text-3xl font-bold">8,423</p>
-        <p className="text-sm opacity-90">người đã nhận tiền</p>
-      </div>
-    </div>
-  </div>
-
-</div>
-{/* ==== XONG! ==== */}
           </div>
         </div>
       </div>
