@@ -11,7 +11,7 @@ const Services = () => {
   const huongDanData = {
     BINGX: `
       <p><strong>Hoàn phí 50%</strong></p>
-      <p><b>Mã giới thiệu:</b> REFUNDPK</p>
+      <p><b>Mã giới thiệu:</b> KSFN28VY</p>
       <h3 class="highlight-existing-ref-1">1️⃣ Đăng ký tài khoản mới</h3>
       <ol>
         <li>1: Bấm “Đăng ký ngay” hoặc nhập mã giới thiệu thủ công</li>
@@ -33,7 +33,7 @@ const Services = () => {
     BITGET: `
       <h2>Bitget</h2>
       <p><strong>Hoàn phí 50%</strong></p>
-      <p><b>Mã giới thiệu:</b> refundpk8</p>
+      <p><b>Mã giới thiệu:</b> VIDHOANPHI</p>
       <h3 class="highlight-existing-ref-1">1️⃣ Đăng ký tài khoản mới</h3>
       <ol>
         <li>1: Bấm “Đăng ký ngay” hoặc nhập mã giới thiệu thủ công</li>
@@ -54,8 +54,8 @@ const Services = () => {
     `,
     BINANCE: `
       <h2>BINANCE</h2>
-      <p><strong>Hoàn phí 50%</strong></p>
-      <p><b>Mã giới thiệu:</b> refundpk8</p>
+      <p><strong>Hoàn phí 20%</strong></p>
+      <p><b>Mã giới thiệu:</b>VIDHOANPHI</p>
       <h3 class="highlight-existing-ref-1">1️⃣ Đăng ký tài khoản mới</h3>
       <ol>
         <li>1: Bấm “Đăng ký ngay” hoặc nhập mã giới thiệu thủ công</li>
@@ -76,8 +76,8 @@ const Services = () => {
     `,
     OKX: `
       <h2>OKX</h2>
-      <p><strong>Hoàn phí 50%</strong></p>
-      <p><b>Mã giới thiệu:</b> refundpk8</p>
+      <p><strong>Hoàn phí 40%</strong></p>
+      <p><b>Mã giới thiệu:</b> VIDHOANPHI</p>
       <h3 class="highlight-existing-ref-1">1️⃣ Đăng ký tài khoản mới</h3>
       <ol>
         <li>1: Bấm “Đăng ký ngay” hoặc nhập mã giới thiệu thủ công</li>
@@ -92,14 +92,14 @@ const Services = () => {
       </ol>
       <h3 class="highlight-existing-ref-1">💰 Cơ chế hoàn phí</h3>
       <ul>
-        <li>Hoàn 45% phí hằng ngày</li>
+        <li>Hoàn 35% phí hằng ngày</li>
         <li>Hoàn thêm 5% cuối tháng</li>
       </ul>
     `,
     BYBIT: `
       <h2>BYBIT</h2>
       <p><strong>Hoàn phí 50%</strong></p>
-      <p><b>Mã giới thiệu:</b> refundpk8</p>
+      <p><b>Mã giới thiệu:</b> VIDHOANPHI</p>
       <h3 class="highlight-existing-ref-1">1️⃣ Đăng ký tài khoản mới</h3>
       <ol>
         <li>1: Bấm “Đăng ký ngay” hoặc nhập mã giới thiệu thủ công</li>
@@ -121,7 +121,7 @@ const Services = () => {
     BITUNIX: `
       <h2>BITUNIX</h2>
       <p><strong>Hoàn phí 50%</strong></p>
-      <p><b>Mã giới thiệu:</b> refundpk8</p>
+      <p><b>Mã giới thiệu:</b> VIDHOANPHI</p>
       <h3 class="highlight-existing-ref-1">1️⃣ Đăng ký tài khoản mới</h3>
       <ol>
         <li>1: Bấm “Đăng ký ngay” hoặc nhập mã giới thiệu thủ công</li>
@@ -143,7 +143,7 @@ const Services = () => {
     MEXC: `
       <h2>MEXC</h2>
       <p><strong>Hoàn phí 50%</strong></p>
-      <p><b>Mã giới thiệu:</b> refundpk8</p>
+      <p><b>Mã giới thiệu:</b> VIDHOANPHI</p>
       <h3 class="highlight-existing-ref-1">1️⃣ Đăng ký tài khoản mới</h3>
       <ol>
         <li>1: Bấm “Đăng ký ngay” hoặc nhập mã giới thiệu thủ công</li>
@@ -165,7 +165,7 @@ const Services = () => {
     EXNESS: `
       <h2>EXNESS</h2>
       <p><strong>Hoàn phí 100%</strong></p>
-      <p><b>Mã giới thiệu:</b> refundpk8</p>
+      <p><b>Mã giới thiệu:</b> VIDHOANPHI</p>
       <h3 class="highlight-existing-ref-1">1️⃣ Đăng ký tài khoản mới</h3>
       <ol>
         <li>1: Bấm “Đăng ký ngay” hoặc nhập mã giới thiệu thủ công</li>
@@ -191,50 +191,52 @@ const Services = () => {
     {
       title: "BINGX",
       cashback: "50",
-      code: "DUCDIEN8386",
+      code: "KSFN28VY",
       imgSrc: "https://w.ladicdn.com/s500x500/67dbe0216346bb0012ce3b79/bingx-20250426193224-ombgf.png",
-      link: "https://www.mexc.com/vi-VN/acquisition/custom-sign-up?shareCode=mexc-VID", 
+      link: "https://bingx.com/invite/KSFN28VY/", 
     },
     {
       title: "BITGET",
       cashback: "50",
-      code: "DUCDIEN8386",
+      code: "VIDHOANPHI",
       imgSrc: "https://www.bitget.com/favicon.ico",
     },
     {
       title: "BINANCE",
       cashback: "40",
-      code: "DUCDIEN8386",
+      code: "VIDHOANPHI",
       imgSrc: "https://w.ladicdn.com/s450x450/67dbe0216346bb0012ce3b79/binance-20250427064738-n26nc.png",
     },
     {
       title: "OKX",
       cashback: "40",
-      code: "DUCDIEN8386",
+      code: "VIDHOANPHI",
       imgSrc: "https://storage.googleapis.com/hostinger-horizons-assets-prod/67304ce5-101c-4405-85e6-f9fde8774dbc/c973b6f4a4b92721f64c11f7aa87d18f.png",
+      link: "https://www.okx.com/join/VIDHOANPHI",
     },
     {
       title: "BYBIT",
       cashback: "40",
-      code: "DUCDIEN8386",
+      code: "VIDHOANPHI",
       imgSrc: "https://storage.googleapis.com/hostinger-horizons-assets-prod/67304ce5-101c-4405-85e6-f9fde8774dbc/9920f86cbed47f1368ae93dbf38c7917.png",
     },
     {
       title: "BITUNIX",
       cashback: "40",
-      code: "DUCDIEN8386",
+      code: "VIDHOANPHI",
       imgSrc: "https://storage.googleapis.com/hostinger-horizons-assets-prod/67304ce5-101c-4405-85e6-f9fde8774dbc/c4ca09fd7478b8af8fb0fcee7593d63d.png",
     },
     {
       title: "MEXC",
       cashback: "40",
-      code: "DUCDIEN8386",
+      code: "mexc-VID",
       imgSrc: "https://storage.googleapis.com/hostinger-horizons-assets-prod/67304ce5-101c-4405-85e6-f9fde8774dbc/ab59a24e551de4d38fbbb5bb557601d6.png",
+      link: "https://www.mexc.com/vi-VN/acquisition/custom-sign-up?shareCode=mexc-VID", 
     },
      {
       title: "EXNESS",
       cashback: "100",
-      code: "DUCDIEN8386",
+      code: "VIDHOANPHI",
       imgSrc: "https://storage.googleapis.com/hostinger-horizons-assets-prod/67304ce5-101c-4405-85e6-f9fde8774dbc/1c7aea78a2e788fc8238dae8717c1997.png",
     },
   ];

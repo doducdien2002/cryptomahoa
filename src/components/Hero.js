@@ -76,7 +76,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg text-slate-700 max-w-2xl leading-relaxed">
-              Chúng tôi xử lý hoàn phí nhanh chóng . Ghi có trong 24 giờ, hỗ trợ rút tiền tự do. Cam kết minh bạch và tỷ lệ ưu đãi cao nhất.
+              Chúng tôi xử lý hoàn phí nhanh chóng trên các sàn Crypto ,Forex. Các bạn sẽ nhận được 40-60% phí giao dịch của mình vào mỗi tháng kèm nhiều ưu đãi.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -134,11 +134,42 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="lg:hidden mt-6 w-full flex justify-center">
-              <div className="rounded-2xl overflow-hidden shadow-xl" style={{ width: 240, height: 260 }}>
-                <img src={ILLUSTRATION_URL} alt="Illustration" className="w-full h-full object-cover" />
-              </div>
-            </div>
+           {/* ==== MOBILE: 2 ẢNH DỌC ĐẸP LUNG LINH ==== */}
+<div className="lg:hidden mt-8 space-y-8 px-4">
+  
+  {/* CARD 1: NẾN TO + TIÊU ĐỀ */}
+  <div className="float" style={{ animation: "float 6s ease-in-out infinite" }}>
+    <div className="bg-white/95 backdrop-blur-lg rounded-3xl p-6 shadow-2xl border border-white/40">
+      <CryptoCandlesSmall size={300} speed={2.3} />
+      <p className="text-center mt-5 text-lg font-bold text-emerald-600">
+        Biểu đồ Live 24/7
+      </p>
+    </div>
+  </div>
+
+  {/* CARD 2: ẢNH + BADGE + SỐ LIỆU */}
+  <div className="float" style={{ animation: "float 7s ease-in-out infinite 1.5s" }}>
+    <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+      <img 
+        src={ILLUSTRATION_URL} 
+        alt="Hoàn phí nhanh" 
+        className="w-full h-80 object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+      
+      <div className="absolute top-4 right-4 bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce">
+        Hoàn 40–60%
+      </div>
+
+      <div className="absolute bottom-5 left-5 text-white">
+        <p className="text-3xl font-bold">8,423</p>
+        <p className="text-sm opacity-90">người đã nhận tiền</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+{/* ==== XONG! ==== */}
           </div>
         </div>
       </div>

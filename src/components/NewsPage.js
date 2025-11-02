@@ -20,7 +20,7 @@ const newsList = [
 
       <h2>💡 Cách tham gia</h2>
       <ol>
-        <li>Đăng ký tài khoản BingX qua mã giới thiệu DUCDIEN8386</li>
+        <li>Đăng ký tài khoản BingX qua mã giới thiệu KSFN28VY</li>
         <li>Hoàn tất KYC để kích hoạt hoàn phí.</li>
         <li>Giao dịch và nhận hoàn phí tự động.</li>
       </ol>
@@ -37,7 +37,7 @@ const newsList = [
       </blockquote>
 
       <h2>📞 Liên hệ hỗ trợ</h2>
-      <p>Liên hệ đội ngũ <strong>DUCDIENHOANPHI </strong> để nhận mã hoàn phí và được hướng dẫn chi tiết.</p>
+      <p>Liên hệ đội ngũ <strong>VIDHOANPHI </strong> để nhận mã hoàn phí và được hướng dẫn chi tiết.</p>
     `,
   },
  {
