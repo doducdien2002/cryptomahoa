@@ -104,6 +104,10 @@ const Bio = () => {
           border-radius: 50%;
           animation: snow 10s linear infinite;
         }
+          img {
+  max-width: 100%;
+  height: auto;
+}
         @keyframes snow { from { transform: translateY(-100vh); } to { transform: translateY(100vh); } }
 
         .animate-scroll-left { animation: scroll-left 18s linear infinite; }
@@ -163,7 +167,10 @@ const Bio = () => {
           .btn span {
             font-size: 0.8rem; 
           }
-
+header {
+  position: relative;
+  padding-top: 5rem; /* để tạo không gian tránh nút */
+}
           .card {
             margin-left: 10px;
             margin-right: 10px;
@@ -175,6 +182,15 @@ const Bio = () => {
             padding-left: 15px;
             padding-right: 15px;
           }
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.max-w-6xl {
+  box-sizing: border-box;
+}
 
           /* Make the content inside card responsive */
           .max-w-5xl {
@@ -185,7 +201,8 @@ const Bio = () => {
         }
       `}</style>
 
-      <div className="min-h-screen" style={{ background: 'var(--bg)', color: 'var(--text)', paddingRight: '10px', paddingLeft: '10px' }}>
+      <div className="min-h-screen overflow-x-hidden" style={{ background: 'var(--bg)', color: 'var(--text)' }}>
+
 
         {/* NÚT SÁNG/TỐI */}
         <button
@@ -213,7 +230,8 @@ const Bio = () => {
         </header>
 
         {/* CARD CHÍNH */}
-        <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-8 py-12 box-border">
+
           <div className="rounded-3xl p-8 md:p-12 shadow-2xl border relative overflow-hidden hover:-translate-y-3 transition-all"
                style={{ background: 'var(--card)', borderColor: 'var(--border)' }}>
 
