@@ -1,10 +1,10 @@
-// App.jsx / App.js
-import React, { useState, useEffect } from "react"; // ⬅️ thêm useEffect
+// App.jsx
+import React, { useState, useEffect } from "react";
 import {
   HashRouter as Router,
   Routes,
   Route,
-  useLocation,          // ⬅️ thêm useLocation
+  useLocation,
 } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -17,12 +17,13 @@ import Testimonials from "./components/Testimonials";
 import NewsPage from "./components/NewsPage";
 import Contact from "./components/contact";
 import { Toaster } from "react-hot-toast";
+import Bio from './components/bio';
 import ContactWidget from "./components/ContactWidget";
 import "./App.css";
 
-// Home có auto-scroll khi nhận state {scrollTo: 'news'}
+// === HOME PAGE ===
 const Home = () => {
-  const location = useLocation(); // ⬅️ dùng được vì đã import
+  const location = useLocation();
 
   useEffect(() => {
     if (location.state?.scrollTo === "news") {
@@ -49,27 +50,45 @@ const Home = () => {
   );
 };
 
-export default function App() {
+// === LAYOUT CHUNG CHO CÁC TRANG KHÁC (CÓ HEADER + FOOTER) ===
+const MainLayout = ({ children }) => {
   const [openContact, setOpenContact] = useState(false);
 
   return (
+    <>
+      <Header onOpenContact={() => setOpenContact(true)} />
+      {children}
+      <Footer />
+      <ContactWidget />
+      <Toaster position="bottom-center" reverseOrder={false} />
+      <Contact open={openContact} onClose={() => setOpenContact(false)} />
+    </>
+  );
+};
+
+// === TRANG BIO: KHÔNG CÓ HEADER, FOOTER, WIDGET ===
+const BioPage = () => {
+  return <Bio />;
+};
+
+// === APP CHÍNH ===
+export default function App() {
+  return (
     <Router>
       <div className="App">
-        <Header onOpenContact={() => setOpenContact(true)} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/news/:id" element={<NewsPage />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
-          
+          {/* CÁC TRANG DÙNG LAYOUT CHUNG */}
+          <Route path="/" element={<MainLayout><Home /></MainLayout>} />
+          <Route path="/services" element={<MainLayout><Services /></MainLayout>} />
+          <Route path="/news" element={<MainLayout><News /></MainLayout>} />
+          <Route path="/news/:id" element={<MainLayout><NewsPage /></MainLayout>} />
+          <Route path="/testimonials" element={<MainLayout><Testimonials /></MainLayout>} />
+          <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
+          <Route path="*" element={<MainLayout><Home /></MainLayout>} />
+
+          {/* TRANG BIO: HOÀN TOÀN RIÊNG BIỆT */}
+          <Route path="/bio" element={<BioPage />} />
         </Routes>
-        <Footer />
-        <ContactWidget />
-        <Toaster position="bottom-center" reverseOrder={false} />
-        <Contact open={openContact} onClose={() => setOpenContact(false)} />
       </div>
     </Router>
   );
