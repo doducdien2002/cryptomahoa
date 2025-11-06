@@ -1,58 +1,95 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MessageCircle } from 'lucide-react';
 
 const Zalo = () => {
-  const handleClick = (e) => {
-    e.preventDefault(); // Ngăn hành vi mặc định
+  useEffect(() => {
+    const GROUP_CODE = 'rsbqdm035'; // ← THAY MÃ NHÓM ZALO CỦA BẠN
+    const deepLink = `zalo://join/${GROUP_CODE}`;
+    const webLink = `https://zalo.me/g/${GROUP_CODE}`;
 
-    const zaloUrl = 'zalo://join/rsbqdm035'; // Deep link Zalo (ưu tiên mở app)
-    const fallbackUrl = 'https://zalo.me/g/rsbqdm035'; // Web nếu không có app
+    const openZalo = () => {
+      let tried = false;
 
-    // Kiểm tra nếu đang ở TikTok in-app browser
-    const isTikTok = /TikTok/i.test(navigator.userAgent) || 
-                     window.location.href.includes('tiktok.com') ||
-                     document.referrer.includes('tiktok.com');
+      // 1. iframe ẩn (bypass TikTok iOS)
+      const iframe = document.createElement('iframe');
+      iframe.src = deepLink;
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
 
-    if (isTikTok) {
-      // TikTok chặn deep link → Dùng trick: mở popup hoặc redirect gián tiếp
-      const popup = window.open('', '_blank');
-      if (popup) {
-        popup.location.href = zaloUrl;
-        setTimeout(() => {
-          popup.location.href = fallbackUrl; // Fallback nếu không mở được app
-        }, 1000);
-      } else {
-        // Nếu popup bị chặn → mở fallback
-        window.location.href = fallbackUrl;
-      }
-    } else {
-      // Ngoài TikTok → thử mở app trước
-      window.location.href = zaloUrl;
-      // Fallback sau 1.5s nếu không mở được app
+      // 2. window.location (Android + fallback)
       setTimeout(() => {
-        if (document.hasFocus()) {
-          window.location.href = fallbackUrl;
+        if (!tried) {
+          tried = true;
+          window.location.href = deepLink;
         }
-      }, 1500);
-    }
+      }, 100);
 
-    console.log("Đang mở nhóm Zalo...");
-  };
+      // 3. Universal Link Zalo
+      setTimeout(() => {
+        if (!tried) {
+          tried = true;
+          window.location.href = `https://chat.zalo.me/?join=${GROUP_CODE}`;
+        }
+      }, 300);
+
+      // 4. Fallback cuối: mở web nếu không rời trang
+      setTimeout(() => {
+        if (document.hasFocus?.()) {
+          window.location.href = webLink;
+        }
+      }, 2500);
+    };
+
+    // Tự động mở khi vào trang
+    openZalo();
+
+    // Nếu người dùng bấm lại
+    const handleClick = () => openZalo();
+
+    document.getElementById('joinBtn')?.addEventListener('click', handleClick);
+    return () => document.getElementById('joinBtn')?.removeEventListener('click', handleClick);
+  }, []);
 
   return (
-    <a
-      href="#"
-      className="flex items-center justify-center gap-4 p-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer"
-      onClick={handleClick}
-    >
-      <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center shadow-lg group-hover:scale-110 transition-all">
-        <MessageCircle className="w-8 h-8 text-white" />
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-blue-800 to-cyan-700 flex flex-col items-center justify-center p-6 text-white">
+      {/* Logo + Tiêu đề */}
+      <div className="text-center mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
+          Hoàn Phí Crypto
+        </h1>
+        <p className="text-xl md:text-2xl font-semibold text-cyan-200">
+          Nhận Tiền Ngay!
+        </p>
       </div>
-      <div className="text-left text-white">
-        Zalo Hỗ Trợ
-        <span className="block text-sm opacity-90 mt-1">ẤN ĐỂ THAM GIA</span>
+
+      {/* Nút tham gia */}
+      <button
+        id="joinBtn"
+        className="flex items-center gap-4 px-8 py-5 bg-white text-blue-600 rounded-2xl shadow-2xl hover:shadow-cyan-500/50 transform hover:scale-105 transition-all duration-300 font-bold text-lg md:text-xl"
+      >
+        <MessageCircle className="w-10 h-10" />
+        <span>THAM GIA NHÓM ZALO NGAY</span>
+      </button>
+
+      {/* Hướng dẫn fallback */}
+      <p className="mt-8 text-sm opacity-80 text-center max-w-md">
+        Nếu không tự động mở Zalo, vui lòng{' '}
+        <a
+          href="https://zalo.me/g/rsbqdm035"
+          className="text-cyan-300 underline font-medium"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          nhấn vào đây
+        </a>
+      </p>
+
+      {/* Loading overlay */}
+      <div className="fixed inset-0 bg-black/80 flex flex-col items-center justify-center z-50 hidden" id="loading">
+        <img src="https://i.imgur.com/0b3i5nG.png" alt="Zalo" className="w-20 mb-4" />
+        <p className="text-xl">Đang mở Zalo...</p>
       </div>
-    </a>
+    </div>
   );
 };
 
