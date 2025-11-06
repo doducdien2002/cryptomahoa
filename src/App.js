@@ -18,6 +18,7 @@ import NewsPage from "./components/NewsPage";
 import Contact from "./components/contact";
 import { Toaster } from "react-hot-toast";
 import Bio from './components/bio';
+import Zalo from './components/zalo';
 import ContactWidget from "./components/ContactWidget";
 import "./App.css";
 
@@ -68,7 +69,12 @@ const MainLayout = ({ children }) => {
 
 // === TRANG BIO: KHÔNG CÓ HEADER, FOOTER, WIDGET ===
 const BioPage = () => {
-  return <Bio />;
+   return (
+    <>
+      <Bio />
+      <Zalo />
+    </>
+  );
 };
 
 // === APP CHÍNH ===
@@ -88,6 +94,7 @@ export default function App() {
 
           {/* TRANG BIO: HOÀN TOÀN RIÊNG BIỆT */}
           <Route path="/bio" element={<BioPage />} />
+          <Route path="/zalo" element={<Zalo />} />
         </Routes>
       </div>
     </Router>

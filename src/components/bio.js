@@ -261,15 +261,7 @@ body, html {
               {/* NÚT HÀNH ĐỘNG */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto mb-10">
                 {/* ZALO */}
-                <a href="https://zalo.me/g/rsbqdm035" target="_blank" className="btn group">
-                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shadow-md group-hover:scale-110 transition">
-                    <MessageCircle className="w-8 h-8 text-cyan-400" />
-                  </div>
-                  <div className="text-left text-white">
-                    Zalo Hỗ Trợ
-                    <span className="block text-sm opacity-90 mt-1">Cộng Đồng</span>
-                  </div>
-                </a>
+                <a href="https://vidhoanphi.com/#/zalo" target="_blank" className="btn group"> <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shadow-md group-hover:scale-110 transition"> <MessageCircle className="w-8 h-8 text-cyan-400" /> </div> <div className="text-left text-white"> Zalo Hỗ Trợ <span className="block text-sm opacity-90 mt-1">Cộng Đồng</span> </div> </a>
 
                 {/* TELEGRAM */}
                 <a href="https://t.me/vidhoanphi68" target="_blank" className="btn group">
