@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 
 const Zalo = () => {
   useEffect(() => {
-    const GROUP_CODE = 'rsbqdm035'; // ← THAY MÃ NHÓM ZALO CỦA BẠN
+    const GROUP_CODE = 'rsbqdm035'; // THAY MÃ NHÓM ZALO CỦA BẠN
     const deepLink = `zalo://join/${GROUP_CODE}`;
     const webLink = `https://zalo.me/g/${GROUP_CODE}`;
 
