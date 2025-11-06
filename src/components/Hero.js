@@ -104,7 +104,7 @@ const Hero = () => {
             <div className="flex flex-wrap items-center gap-10 mt-12">
               <div className="flex items-center gap-2">
                 <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
-                <span className="text-sm font-medium">Hợp tác nhiều sàn lớn</span>
+                <span className="text-sm font-medium">Hợp Tác Nhiều Sàn Lớn</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
@@ -112,7 +112,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center animate-pulse">✓</div>
-                <span className="text-sm font-medium">98k người hài lòng</span>
+                <span className="text-sm font-medium">98K Người Hài Lòng</span>
               </div>
             </div>
           </div>

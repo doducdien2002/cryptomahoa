@@ -3,10 +3,10 @@ import { Sun, Moon, MessageCircle, Send, Globe, UserCheck, Youtube, Instagram } 
 
 // === DỮ LIỆU ===
 const exchanges = [
-  { name: 'MEXC', reward: '25$', fee: '30-60%', img: 'https://hoanphi.net/wp-content/uploads/2025/08/mexc-logo-100x100.png', link: 'https://www.mexc.com/register?inviteCode=1WvJ8' },
-  { name: 'BingX', reward: '500$', fee: '30-60%', img: 'https://hoanphi.net/wp-content/uploads/2025/08/BingX-logo-100x100.png', link: '#' },
-  { name: 'OKX', reward: 'Hoàn phí cao', fee: '30-60%', img: 'https://hoanphi.net/wp-content/uploads/2025/08/okx-logo-400x400.png', link: '#' },
-  { name: 'Bybit', reward: 'Giao dịch pro', fee: '30-60%', img: 'https://hoanphi.net/wp-content/uploads/2025/08/Bybit-logo-2-401x400.png', link: '#' },
+  { name: 'MEXC', reward: 'Tặng 25$', fee: '50%', img: 'https://hoanphi.net/wp-content/uploads/2025/08/mexc-logo-100x100.png', link: 'https://www.mexc.com/vi-VN/acquisition/custom-sign-up?shareCode=mexc-VID' },
+  { name: 'BingX', reward: 'Bonus 500$', fee: '50%', img: 'https://hoanphi.net/wp-content/uploads/2025/08/BingX-logo-100x100.png', link: 'https://bingx.com/invite/KSFN28VY/' },
+  { name: 'OKX', reward: 'Hoàn phí cao', fee: '50%', img: 'https://hoanphi.net/wp-content/uploads/2025/08/okx-logo-400x400.png', link: 'https://www.okx.com/join/VIDHOANPHI' },
+  { name: 'Bybit', reward: 'Giao dịch pro', fee: '50%', img: 'https://hoanphi.net/wp-content/uploads/2025/08/Bybit-logo-2-401x400.png', link: '#' },
 ];
 
 const registrations = [
@@ -261,18 +261,18 @@ body, html {
               {/* NÚT HÀNH ĐỘNG */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto mb-10">
                 {/* ZALO */}
-                <a href="https://zalo.me/0915465335" target="_blank" className="btn group">
+                <a href="https://zalo.me/g/rsbqdm035" target="_blank" className="btn group">
                   <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shadow-md group-hover:scale-110 transition">
                     <MessageCircle className="w-8 h-8 text-cyan-400" />
                   </div>
                   <div className="text-left text-white">
                     Zalo Hỗ Trợ
-                    <span className="block text-sm opacity-90 mt-1">091.546.5335</span>
+                    <span className="block text-sm opacity-90 mt-1">Cộng Đồng</span>
                   </div>
                 </a>
 
                 {/* TELEGRAM */}
-                <a href="https://t.me/vidhoanphi" target="_blank" className="btn group">
+                <a href="https://t.me/vidhoanphi68" target="_blank" className="btn group">
                   <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shadow-md group-hover:scale-110 transition">
                     <Send className="w-8 h-8 text-blue-500" />
                   </div>
