@@ -3,10 +3,17 @@ import { Sun, Moon, MessageCircle, Send, Globe, UserCheck, Youtube, Instagram, S
 
 // === DỮ LIỆU ===
 const exchanges = [
- 
+  { 
+    name: 'ATX', 
+    reward: 'Tặng 100 USDT', 
+    fee: '60%', 
+    img: 'https://hoanphi.net/wp-content/uploads/2025/08/atx-logo.png', 
+    link: 'https://atx.com/register?ref=VIDHOANPHI',
+    hot: true 
+  },
   { 
     name: 'MEXC', 
-    reward: 'Tặng 25$ người mới', 
+    reward: 'Tặng 25$', 
     fee: '50%', 
     img: 'https://hoanphi.net/wp-content/uploads/2025/08/mexc-logo-100x100.png', 
     link: 'https://www.mexc.com/vi-VN/acquisition/custom-sign-up?shareCode=mexc-VID',
@@ -14,7 +21,7 @@ const exchanges = [
   },
   { 
     name: 'BingX', 
-    reward: 'Bonus 500$ nạp tiền', 
+    reward: 'Bonus 500$', 
     fee: '50%', 
     img: 'https://hoanphi.net/wp-content/uploads/2025/08/BingX-logo-100x100.png', 
     link: 'https://bingx.com/invite/KSFN28VY/',
@@ -22,7 +29,7 @@ const exchanges = [
   },
   { 
     name: 'OKX', 
-    reward: 'Đua top giao dịch', 
+    reward: 'Hoàn phí cao', 
     fee: '50%', 
     img: 'https://hoanphi.net/wp-content/uploads/2025/08/okx-logo-400x400.png', 
     link: 'https://www.okx.com/join/VIDHOANPHI',
@@ -30,7 +37,7 @@ const exchanges = [
   },
   { 
     name: 'Bybit', 
-    reward: 'Hoàn phí giao dịch', 
+    reward: 'Giao dịch pro', 
     fee: '50%', 
     img: 'https://hoanphi.net/wp-content/uploads/2025/08/Bybit-logo-2-401x400.png', 
     link: '#',

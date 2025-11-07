@@ -72,7 +72,7 @@ const BioPage = () => {
    return (
     <>
       <Bio />
-      <Zalo />
+     
     </>
   );
 };
@@ -94,7 +94,7 @@ export default function App() {
 
           {/* TRANG BIO: HOÀN TOÀN RIÊNG BIỆT */}
           <Route path="/bio" element={<BioPage />} />
-          <Route path="/zalo" element={<Zalo />} />
+          
         </Routes>
       </div>
     </Router>
