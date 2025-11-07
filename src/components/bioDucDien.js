@@ -5,15 +5,15 @@ import { Sun, Moon, MessageCircle, Send, Globe, UserCheck, Youtube, Instagram, S
 const exchanges = [
   { 
     name: 'ATX', 
-    reward: 'Tặng 100 USDT', 
-    fee: '60%', 
-    img: 'https://hoanphi.net/wp-content/uploads/2025/08/atx-logo.png', 
-    link: 'https://atx.com/register?ref=VIDHOANPHI',
-    hot: true 
+    reward: 'Tặng 1M2 người mới', 
+    fee: ' Phí, Trade Lãi Rút Về Tài Khoản', 
+    img: 'https://cashback.exchange/image/exchanges/atx.png', 
+    link: 'https://atxs.io/r/ducdien8386',
+    hot: true
   },
   { 
     name: 'MEXC', 
-    reward: 'Tặng 25$', 
+    reward: 'Tặng 25$ người mới', 
     fee: '50%', 
     img: 'https://hoanphi.net/wp-content/uploads/2025/08/mexc-logo-100x100.png', 
     link: 'https://www.mexc.com/vi-VN/acquisition/custom-sign-up?shareCode=mexc-VID',
@@ -21,7 +21,7 @@ const exchanges = [
   },
   { 
     name: 'BingX', 
-    reward: 'Bonus 500$', 
+    reward: 'Bonus 500$ nạp tiền', 
     fee: '50%', 
     img: 'https://hoanphi.net/wp-content/uploads/2025/08/BingX-logo-100x100.png', 
     link: 'https://bingx.com/invite/KSFN28VY/',
@@ -29,7 +29,7 @@ const exchanges = [
   },
   { 
     name: 'OKX', 
-    reward: 'Hoàn phí cao', 
+    reward: 'Đua top giao dịch', 
     fee: '50%', 
     img: 'https://hoanphi.net/wp-content/uploads/2025/08/okx-logo-400x400.png', 
     link: 'https://www.okx.com/join/VIDHOANPHI',
@@ -37,7 +37,7 @@ const exchanges = [
   },
   { 
     name: 'Bybit', 
-    reward: 'Giao dịch pro', 
+    reward: 'Hoàn phí giao dịch', 
     fee: '50%', 
     img: 'https://hoanphi.net/wp-content/uploads/2025/08/Bybit-logo-2-401x400.png', 
     link: '#',
@@ -384,7 +384,7 @@ const Bio = () => {
                               className="w-48 h-48"
                             />
                           </div>
-                          <p className="text-xs text-gray-500 mt-3">Dùng app Zalo để quét</p>
+                          <p className="text-xs text-gray-500 mt-3">Quét để tham gia nhóm !</p>
                            {/* SỐ ZALO + BIỂU TƯỢNG COPY */}
 <div className="mt-4 text-center">
   <p className="text-xs text-gray-500 mb-2">Hoặc liên hệ trực tiếp:</p>

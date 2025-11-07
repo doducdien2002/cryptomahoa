@@ -377,7 +377,7 @@ const Bio = () => {
                               className="w-48 h-48"
                             />
                           </div>
-                          <p className="text-xs text-gray-500 mt-3">Dùng app Zalo để quét</p>
+                          <p className="text-xs text-gray-500 mt-3">Quét để tham gia nhóm !</p>
                            {/* SỐ ZALO + BIỂU TƯỢNG COPY */}
 <div className="mt-4 text-center">
   <p className="text-xs text-gray-500 mb-2">Hoặc liên hệ trực tiếp:</p>

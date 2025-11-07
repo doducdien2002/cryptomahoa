@@ -19,6 +19,7 @@ import Contact from "./components/contact";
 import { Toaster } from "react-hot-toast";
 import Bio from './components/bio';
 import Zalo from './components/zalo';
+import BioDucDien from './components/bioDucDien'
 import ContactWidget from "./components/ContactWidget";
 import "./App.css";
 
@@ -76,6 +77,15 @@ const BioPage = () => {
     </>
   );
 };
+const BioDien = () => {
+   return (
+    <>
+      <BioDucDien />
+     
+    </>
+  );
+};
+
 
 // === APP CHÍNH ===
 export default function App() {
@@ -94,6 +104,7 @@ export default function App() {
 
           {/* TRANG BIO: HOÀN TOÀN RIÊNG BIỆT */}
           <Route path="/bio" element={<BioPage />} />
+          <Route path="/BioDucDien" element={<BioDien />} />
           
         </Routes>
       </div>
