@@ -20,6 +20,8 @@ import { Toaster } from "react-hot-toast";
 import Bio from './components/bio';
 import Zalo from './components/zalo';
 import BioDucDien from './components/bioDucDien'
+import BioTranVinh from './components/bioTranVinh'
+import BioNguyenVien from './components/bioNguyenVien'
 import ContactWidget from "./components/ContactWidget";
 import "./App.css";
 
@@ -86,6 +88,24 @@ const BioDien = () => {
   );
 };
 
+const BioTranVinh = () => {
+   return (
+    <>
+      <BioTranVinh />
+     
+    </>
+  );
+};
+
+const BioNguyenVien = () => {
+   return (
+    <>
+      <BioNguyenVien />
+     
+    </>
+  );
+};
+
 
 // === APP CHÍNH ===
 export default function App() {
@@ -105,6 +125,8 @@ export default function App() {
           {/* TRANG BIO: HOÀN TOÀN RIÊNG BIỆT */}
           <Route path="/bio" element={<BioPage />} />
           <Route path="/BioDucDien" element={<BioDien />} />
+          <Route path="/BioguyenVien" element={<BioguyenVien />} />
+          <Route path="/BioTranVinh" element={<BioTranVinh />} />
           
         </Routes>
       </div>
