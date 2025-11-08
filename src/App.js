@@ -17,10 +17,9 @@ import Testimonials from "./components/Testimonials";
 import NewsPage from "./components/NewsPage";
 import Contact from "./components/contact";
 import { Toaster } from "react-hot-toast";
-import Bio from "./components/bio";
-import BioDucDien from "./components/bioDucDien";
-import BioTranVinh from "./components/bioTranVinh";
-import BioNguyenVien from "./components/bioNguyenVien";
+
+import BioDucDien from "./components/BioDucDien";
+
 import ContactWidget from "./components/ContactWidget";
 import "./App.css";
 
@@ -90,10 +89,9 @@ export default function App() {
           <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
 
           {/* TRANG BIO RIÊNG BIỆT */}
-          <Route path="/bio" element={<BioPage />} />
+
           <Route path="/bioducdien" element={<BioDien />} />
-          <Route path="/bionguyenvien" element={<BioNguyenVienPage />} />
-          <Route path="/biotranvinh" element={<BioTranVinhPage />} />
+  
 
           {/* CUỐI CÙNG: CÁC TRANG KHÔNG KHỚP → HOME */}
         
