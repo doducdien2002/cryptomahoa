@@ -1,4 +1,4 @@
-// App.jsx
+// src/App.js
 import React, { useState, useEffect } from "react";
 import {
   HashRouter as Router,
@@ -124,7 +124,7 @@ export default function App() {
             }
           />
 
-          {/* TRANG BIO RIÊNG BIỆT */}
+          {/* TRANG BIO */}
           <Route path="/bioducdien" element={<BioDucDien />} />
           <Route path="/bionguyenvien" element={<Vienblog />} />
         </Routes>
