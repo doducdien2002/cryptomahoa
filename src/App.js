@@ -19,7 +19,7 @@ import Contact from "./components/contact";
 import { Toaster } from "react-hot-toast";
 
 import BioDucDien from "./components/BioDucDien";
-import Vienblog from "./components/Vienblog"
+import Vienblog from "./components/Vienblog";
 
 import ContactWidget from "./components/ContactWidget";
 import "./App.css";
@@ -69,34 +69,64 @@ const MainLayout = ({ children }) => {
   );
 };
 
-// === TRANG BIO (KHÔNG HEADER/FOOTER) ===
-const BioPage = () => <Bio />;
-const BioDien = () => <BioDucDien />;
-const BioTranVinhPage = () => <BioTranVinh />;
-const Vienblog = () => <Vienblog />;
-
-// === APP CHÍNH ===
 export default function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
           {/* TRANG CHÍNH DÙNG LAYOUT */}
-          <Route path="/" element={<MainLayout><Home /></MainLayout>} />
-          <Route path="/services" element={<MainLayout><Services /></MainLayout>} />
-          <Route path="/news" element={<MainLayout><News /></MainLayout>} />
-          <Route path="/news/:id" element={<MainLayout><NewsPage /></MainLayout>} />
-          <Route path="/testimonials" element={<MainLayout><Testimonials /></MainLayout>} />
-          <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
+          <Route
+            path="/"
+            element={
+              <MainLayout>
+                <Home />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/services"
+            element={
+              <MainLayout>
+                <Services />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/news"
+            element={
+              <MainLayout>
+                <News />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/news/:id"
+            element={
+              <MainLayout>
+                <NewsPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/testimonials"
+            element={
+              <MainLayout>
+                <Testimonials />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <MainLayout>
+                <Contact />
+              </MainLayout>
+            }
+          />
 
           {/* TRANG BIO RIÊNG BIỆT */}
-
-          <Route path="/bioducdien" element={<BioDien />} />
+          <Route path="/bioducdien" element={<BioDucDien />} />
           <Route path="/bionguyenvien" element={<Vienblog />} />
-  
-
-          {/* CUỐI CÙNG: CÁC TRANG KHÔNG KHỚP → HOME */}
-        
         </Routes>
       </div>
     </Router>
