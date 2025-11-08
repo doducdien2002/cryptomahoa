@@ -23,11 +23,11 @@ export default function Header({ onOpenContact = () => {} }) {
           className="text-2xl font-extrabold tracking-wide text-white hover:opacity-90 transition flex items-center"
           style={{ lineHeight: '0' }} 
         >
-          <img
+          {/* <img
             // src={logo}
             // alt="Logo"
             // className="mr-2 h-16 max-h-full object-contain" 
-          />
+          /> */}
           VID HOÀN PHÍ
         </a>
 

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { Sun, Moon, MessageCircle, Send, Globe, UserCheck, Youtube, Instagram, Star, Zap } from 'lucide-react';
+import { Sun, Moon, MessageCircle, Send, Globe, Youtube, Instagram, Star, Zap } from 'lucide-react';
+
 
 // === DỮ LIỆU ===
 const exchanges = [
@@ -40,7 +41,7 @@ const exchanges = [
     reward: 'Hoàn phí giao dịch', 
     fee: '50%', 
     img: 'https://hoanphi.net/wp-content/uploads/2025/08/Bybit-logo-2-401x400.png', 
-    link: '#',
+    link: 'https://www.bybit.com',
     hot: false 
   },
 ];
@@ -56,7 +57,7 @@ const registrations = [
 ];
 
 // === LINK ZALO (THAY LINK CỦA BẠN VÀO ĐÂY) ===
-const ZALO_LINK = "https://zalo.me/g/abc123"; // ← THAY BẰNG LINK NHÓM ZALO CỦA BẠN
+
 
 const Vienblog = () => {
   const [theme, setTheme] = useState('dark');
@@ -282,7 +283,7 @@ const Vienblog = () => {
           </h1>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: theme === 'dark' ? '#94a3b8' : '#475569' }}>
             Đồng hành cùng bạn trên hành trình đầu tư Crypto an toàn & hiệu quả tại{' '}
-            <a href="https://vidhoanphi.com" target="_blank" style={{ color: 'var(--accent)', fontWeight: 600 }} className="underline">
+            <a href="https://vidhoanphi.com" target="_blank"  rel="noreferrer" style={{ color: 'var(--accent)', fontWeight: 600 }} className="underline">
               vidhoanphi.com
             </a>
           </p>
@@ -435,6 +436,7 @@ const Vienblog = () => {
                 <a 
                   href="https://t.me/vidhoanphi68" 
                   target="_blank" 
+                  rel="noreferrer"
                   className="group relative overflow-hidden rounded-2xl p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex-1 min-w-[280px]"
                 >
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
@@ -466,6 +468,7 @@ const Vienblog = () => {
                     key={i} 
                     href={ex.link} 
                     target="_blank" 
+                     rel="noreferrer"
                     className="btn group relative overflow-visible"
                   >
                     {ex.hot && <div className="hot-badge">HOT</div>}
@@ -480,11 +483,11 @@ const Vienblog = () => {
 
               {/* SOCIAL */}
               <div className="flex justify-center gap-4">
-                <a href="#" className="w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:-translate-y-1 hover:scale-110"
+                <a href="https://vidhoanphi.com" className="w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:-translate-y-1 hover:scale-110"
                    style={{ background: 'linear-gradient(45deg, #f09433, #e6683c)', color: 'white' }}>
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:-translate-y-1 hover:scale-110"
+                <a href="https://vidhoanphi.com" className="w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:-translate-y-1 hover:scale-110"
                    style={{ background: 'linear-gradient(45deg, #ff0000, #cc0000)', color: 'white' }}>
                   <Youtube className="w-5 h-5" />
                 </a>

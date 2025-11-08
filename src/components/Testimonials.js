@@ -1,5 +1,5 @@
 import React from 'react';
-import ANHIMG from '../ANHIMG.jpg';
+
 import TestimonialCard from './TestimonialCard';
 import nhansandy from '../assets/nhansandy.png';
 import thayongnoi from '../assets/thayongnoi.png';
