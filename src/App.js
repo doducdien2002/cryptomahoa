@@ -18,9 +18,9 @@ import NewsPage from "./components/NewsPage";
 import Contact from "./components/contact";
 import { Toaster } from "react-hot-toast";
 
-import BioDucDien from "./components/BioDucDien";
+import DienBlog from "./components/Dienblog";
 import Vienblog from "./components/Vienblog";
-
+import BioTranVinh from "./components/BioTranVinh"
 import ContactWidget from "./components/ContactWidget";
 import "./App.css";
 
@@ -125,8 +125,9 @@ export default function App() {
           />
 
           {/* TRANG BIO */}
-          <Route path="/bioducdien" element={<BioDucDien />} />
+          <Route path="/bioducdien" element={<DienBlog />} />
           <Route path="/bionguyenvien" element={<Vienblog />} />
+          <Route path="/biotranvinh" element={<BioTranVinh />} />
         </Routes>
       </div>
     </Router>

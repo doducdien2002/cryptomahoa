@@ -9,7 +9,7 @@ const exchanges = [
     reward: 'Tặng 1M2 người mới', 
     fee: ' Phí, Trade Lãi Rút Về Tài Khoản', 
     img: 'https://cashback.exchange/image/exchanges/atx.png', 
-    link: 'https://atxs.io/r/VIENTYPHU',
+    link: 'https://atxs.io/r/ducdien8386',
     hot: true
   },
   { 
@@ -59,7 +59,7 @@ const registrations = [
 // === LINK ZALO (THAY LINK CỦA BẠN VÀO ĐÂY) ===
 
 
-const Vienblog = () => {
+const Dienblog = () => {
   const [theme, setTheme] = useState('dark');
   const [tickerItems, setTickerItems] = useState([]);
   const [showZaloPopup, setShowZaloPopup] = useState(false); // POPUP ZALO
@@ -511,4 +511,4 @@ const Vienblog = () => {
   );
 };
 
-export default Vienblog;
+export default Dienblog;
