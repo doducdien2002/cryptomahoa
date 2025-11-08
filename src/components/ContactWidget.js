@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaTiktok, FaYoutube,FaTelegramPlane } from "react-icons/fa";
+import { FaYoutube, FaTelegramPlane } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
 import { IoClose, IoChatbubbleEllipses } from "react-icons/io5";
 
@@ -13,14 +13,18 @@ const ContactWidget = () => {
           {/* Zalo */}
           <a
             href="https://zalo.me/g/xfehbq386"
+            target="_blank"
+            rel="noreferrer"
             className="bg-white p-3 rounded-full shadow-lg hover:scale-110 transition"
           >
             <SiZalo className="text-blue-500 text-2xl" />
           </a>
 
-          {/* TikTok */}
+          {/* Telegram */}
           <a
             href="https://t.me/vidhoanphi"
+            target="_blank"
+            rel="noreferrer"
             className="bg-black p-3 rounded-full shadow-lg hover:scale-110 transition"
           >
             <FaTelegramPlane className="text-white text-2xl" />
@@ -28,7 +32,9 @@ const ContactWidget = () => {
 
           {/* YouTube */}
           <a
-            href="#"
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noreferrer"
             className="bg-red-500 p-3 rounded-full shadow-lg hover:scale-110 transition"
           >
             <FaYoutube className="text-white text-2xl" />

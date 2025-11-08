@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ⬅ thêm
-import logo from '../assets/logo.png';
+
 
 export default function Header({ onOpenContact = () => {} }) {
   const navigate = useNavigate();              // ⬅ khởi tạo navigate
