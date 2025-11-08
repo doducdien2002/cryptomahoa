@@ -91,9 +91,9 @@ export default function App() {
 
           {/* TRANG BIO RIÊNG BIỆT */}
           <Route path="/bio" element={<BioPage />} />
-          <Route path="/bio-duc-dien" element={<BioDien />} />
-          <Route path="/bio-nguyen-vien" element={<BioNguyenVienPage />} />
-          <Route path="/bio-tran-vinh" element={<BioTranVinhPage />} />
+          <Route path="/bioducdien" element={<BioDien />} />
+          <Route path="/bionguyenvien" element={<BioNguyenVienPage />} />
+          <Route path="/biotranvinh" element={<BioTranVinhPage />} />
 
           {/* CUỐI CÙNG: CÁC TRANG KHÔNG KHỚP → HOME */}
           <Route path="*" element={<MainLayout><Home /></MainLayout>} />
