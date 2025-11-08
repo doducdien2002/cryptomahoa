@@ -125,7 +125,7 @@ export default function App() {
           {/* TRANG BIO: HOÀN TOÀN RIÊNG BIỆT */}
           <Route path="/bio" element={<BioPage />} />
           <Route path="/BioDucDien" element={<BioDien />} />
-          <Route path="/BioguyenVien" element={<BioguyenVien />} />
+          <Route path="/BioguyenVien" element={<BioNguyenVien />} />
           <Route path="/BioTranVinh" element={<BioTranVinh />} />
           
         </Routes>
