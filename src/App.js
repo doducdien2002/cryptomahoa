@@ -17,11 +17,10 @@ import Testimonials from "./components/Testimonials";
 import NewsPage from "./components/NewsPage";
 import Contact from "./components/contact";
 import { Toaster } from "react-hot-toast";
-import Bio from './components/bio';
-import Zalo from './components/zalo';
-import BioDucDien from './components/bioDucDien'
-import BioTranVinh from './components/bioTranVinh'
-import BioNguyenVien from './components/bioNguyenVien'
+import Bio from "./components/bio";
+import BioDucDien from "./components/bioDucDien";
+import BioTranVinh from "./components/bioTranVinh";
+import BioNguyenVien from "./components/bioNguyenVien";
 import ContactWidget from "./components/ContactWidget";
 import "./App.css";
 
@@ -54,7 +53,7 @@ const Home = () => {
   );
 };
 
-// === LAYOUT CHUNG CHO CÁC TRANG KHÁC (CÓ HEADER + FOOTER) ===
+// === LAYOUT CHUNG ===
 const MainLayout = ({ children }) => {
   const [openContact, setOpenContact] = useState(false);
 
@@ -70,42 +69,11 @@ const MainLayout = ({ children }) => {
   );
 };
 
-// === TRANG BIO: KHÔNG CÓ HEADER, FOOTER, WIDGET ===
-const BioPage = () => {
-   return (
-    <>
-      <Bio />
-     
-    </>
-  );
-};
-const BioDien = () => {
-   return (
-    <>
-      <BioDucDien />
-     
-    </>
-  );
-};
-
-const BioTranVinh = () => {
-   return (
-    <>
-      <BioTranVinh />
-     
-    </>
-  );
-};
-
-const BioNguyenVien = () => {
-   return (
-    <>
-      <BioNguyenVien />
-     
-    </>
-  );
-};
-
+// === TRANG BIO (KHÔNG HEADER/FOOTER) ===
+const BioPage = () => <Bio />;
+const BioDien = () => <BioDucDien />;
+const BioTranVinhPage = () => <BioTranVinh />;
+const BioNguyenVienPage = () => <BioNguyenVien />;
 
 // === APP CHÍNH ===
 export default function App() {
@@ -113,21 +81,22 @@ export default function App() {
     <Router>
       <div className="App">
         <Routes>
-          {/* CÁC TRANG DÙNG LAYOUT CHUNG */}
+          {/* TRANG CHÍNH DÙNG LAYOUT */}
           <Route path="/" element={<MainLayout><Home /></MainLayout>} />
           <Route path="/services" element={<MainLayout><Services /></MainLayout>} />
           <Route path="/news" element={<MainLayout><News /></MainLayout>} />
           <Route path="/news/:id" element={<MainLayout><NewsPage /></MainLayout>} />
           <Route path="/testimonials" element={<MainLayout><Testimonials /></MainLayout>} />
           <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
-          <Route path="*" element={<MainLayout><Home /></MainLayout>} />
 
-          {/* TRANG BIO: HOÀN TOÀN RIÊNG BIỆT */}
+          {/* TRANG BIO RIÊNG BIỆT */}
           <Route path="/bio" element={<BioPage />} />
-          <Route path="/BioDucDien" element={<BioDien />} />
-          <Route path="/BioguyenVien" element={<BioNguyenVien />} />
-          <Route path="/BioTranVinh" element={<BioTranVinh />} />
-          
+          <Route path="/bio-duc-dien" element={<BioDien />} />
+          <Route path="/bio-nguyen-vien" element={<BioNguyenVienPage />} />
+          <Route path="/bio-tran-vinh" element={<BioTranVinhPage />} />
+
+          {/* CUỐI CÙNG: CÁC TRANG KHÔNG KHỚP → HOME */}
+          <Route path="*" element={<MainLayout><Home /></MainLayout>} />
         </Routes>
       </div>
     </Router>

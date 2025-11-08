@@ -8,7 +8,7 @@ const exchanges = [
     reward: 'Tặng 1M2 người mới', 
     fee: ' Phí, Trade Lãi Rút Về Tài Khoản', 
     img: 'https://cashback.exchange/image/exchanges/atx.png', 
-    link: 'https://atxapp.app.link/refer/21749987',
+    link: 'https://atxs.io/r/21749987',
     hot: true
   },
   { 
