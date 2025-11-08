@@ -96,7 +96,7 @@ export default function App() {
           <Route path="/biotranvinh" element={<BioTranVinhPage />} />
 
           {/* CUỐI CÙNG: CÁC TRANG KHÔNG KHỚP → HOME */}
-          <Route path="*" element={<MainLayout><Home /></MainLayout>} />
+        
         </Routes>
       </div>
     </Router>
