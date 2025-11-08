@@ -19,6 +19,7 @@ import Contact from "./components/contact";
 import { Toaster } from "react-hot-toast";
 
 import BioDucDien from "./components/BioDucDien";
+import Vienblog from "./components/Vienblog"
 
 import ContactWidget from "./components/ContactWidget";
 import "./App.css";
@@ -72,7 +73,7 @@ const MainLayout = ({ children }) => {
 const BioPage = () => <Bio />;
 const BioDien = () => <BioDucDien />;
 const BioTranVinhPage = () => <BioTranVinh />;
-const BioNguyenVienPage = () => <BioNguyenVien />;
+const Vienblog = () => <BioNguyenVien />;
 
 // === APP CHÍNH ===
 export default function App() {
@@ -91,6 +92,7 @@ export default function App() {
           {/* TRANG BIO RIÊNG BIỆT */}
 
           <Route path="/bioducdien" element={<BioDien />} />
+          <Route path="/bionguyenvien" element={<Vienblog />} />
   
 
           {/* CUỐI CÙNG: CÁC TRANG KHÔNG KHỚP → HOME */}
