@@ -58,7 +58,7 @@ const registrations = [
 // === LINK ZALO (THAY LINK CỦA BẠN VÀO ĐÂY) ===
 const ZALO_LINK = "https://zalo.me/g/abc123"; // ← THAY BẰNG LINK NHÓM ZALO CỦA BẠN
 
-const Bio = () => {
+const BioNguyenVien = () => {
   const [theme, setTheme] = useState('dark');
   const [tickerItems, setTickerItems] = useState([]);
   const [showZaloPopup, setShowZaloPopup] = useState(false); // POPUP ZALO
@@ -508,4 +508,4 @@ const Bio = () => {
   );
 };
 
-export default Bio;
+export default BioNguyenVien;
