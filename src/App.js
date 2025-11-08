@@ -73,7 +73,7 @@ const MainLayout = ({ children }) => {
 const BioPage = () => <Bio />;
 const BioDien = () => <BioDucDien />;
 const BioTranVinhPage = () => <BioTranVinh />;
-const Vienblog = () => <BioNguyenVien />;
+const Vienblog = () => <Vienblog />;
 
 // === APP CHÍNH ===
 export default function App() {
