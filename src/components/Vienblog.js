@@ -372,7 +372,7 @@ const Vienblog = () => {
                           className="w-full mb-6 px-6 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-2xl flex items-center justify-center gap-3 transition-all hover:scale-105 shadow-lg"
                         >
                           <MessageCircle className="w-6 h-6" />
-                          Tham gia nhóm Zalo ngay
+                          Tham gia nhóm Zalo ngay 1
                         </a>
 
                         {/* QR CODE */}
