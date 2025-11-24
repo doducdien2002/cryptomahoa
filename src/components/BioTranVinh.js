@@ -1,72 +1,80 @@
-import { useState, useEffect, useRef } from 'react';
-import { Sun, Moon, MessageCircle, Send, Globe, Youtube, Instagram, Star, Zap } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import {
+  Sun,
+  Moon,
+  MessageCircle,
+  Send,
+  Globe,
+  Youtube,
+  Instagram,
+  Trophy,
+  Zap,
+  ArrowRight,
+  Copy,
+  Check,
+} from 'lucide-react';
 
-
-// === DỮ LIỆU ===
 const exchanges = [
-  { 
-    name: 'ATX', 
-    reward: 'Tặng 1M2 người mới', 
-    fee: ' Phí, Trade Lãi Rút Về Tài Khoản', 
-    img: 'https://cashback.exchange/image/exchanges/atx.png', 
+  {
+    name: 'ATX',
+    reward: 'Tặng 1.000.000đ',
+    img: 'https://cashback.exchange/image/exchanges/atx.png',
     link: 'https://atxs.io/r/21749987',
-    hot: true
+    hot: true,
   },
-  { 
-    name: 'MEXC', 
-    reward: 'Tặng 25$ người mới', 
-    fee: '50%', 
-    img: 'https://hoanphi.net/wp-content/uploads/2025/08/mexc-logo-100x100.png', 
-    link: 'https://www.mexc.com/vi-VN/acquisition/custom-sign-up?shareCode=mexc-VID',
-    hot: false 
-  },
-  { 
-    name: 'BingX', 
-    reward: 'Bonus 500$ nạp tiền', 
-    fee: '50%', 
-    img: 'https://hoanphi.net/wp-content/uploads/2025/08/BingX-logo-100x100.png', 
+  {
+    name: 'BingX',
+    reward: 'Bonus tới 500$',
+    img: 'https://hoanphi.net/wp-content/uploads/2025/08/BingX-logo-100x100.png',
     link: 'https://bingx.com/invite/KSFN28VY/',
-    hot: true 
+    hot: true,
   },
-  { 
-    name: 'OKX', 
-    reward: 'Đua top giao dịch', 
-    fee: '50%', 
-    img: 'https://hoanphi.net/wp-content/uploads/2025/08/okx-logo-400x400.png', 
+  {
+    name: 'OKX',
+    reward: 'Đua top thưởng khủng',
+    img: 'https://hoanphi.net/wp-content/uploads/2025/08/okx-logo-400x400.png',
     link: 'https://www.okx.com/join/VIDHOANPHI',
-    hot: true
+    hot: true,
   },
-  { 
-    name: 'Bybit', 
-    reward: 'Hoàn phí giao dịch', 
-    fee: '50%', 
-    img: 'https://hoanphi.net/wp-content/uploads/2025/08/Bybit-logo-2-401x400.png', 
+  {
+    name: 'MEXC',
+    reward: 'Tặng 25$ tân binh',
+    img: 'https://hoanphi.net/wp-content/uploads/2025/08/mexc-logo-100x100.png',
+    link: 'https://www.mexc.com/vi-VN/acquisition/custom-sign-up?shareCode=mexc-VID',
+    hot: true,
+  },
+  {
+    name: 'Bybit',
+    reward: 'Hoàn phí cao nhất',
+    img: 'https://hoanphi.net/wp-content/uploads/2025/08/Bybit-logo-2-401x400.png',
     link: 'https://www.bybit.com',
-    hot: false 
+    hot: true,
+  },
+    {
+    name: 'Bitunix',
+    reward: 'Ưu đãi nạp tiền tới 500$',
+    img: 'https://storage.googleapis.com/hostinger-horizons-assets-prod/67304ce5-101c-4405-85e6-f9fde8774dbc/c4ca09fd7478b8af8fb0fcee7593d63d.png',
+    link: 'https://www.bitunix.com/activity/newbie-camp?vipCode=VIDHOANPHI',
+    hot: true,
   },
 ];
 
 const registrations = [
-  { username: "a1234567", exchange: "ATX" },
-  { username: "b9876543", exchange: "BingX" },
-  { username: "c4567890", exchange: "OKX" },
-  { username: "d1122334", exchange: "Bybit" },
-  { username: "e5566778", exchange: "MEXC" },
-  { username: "f9988776", exchange: "ATX" },
-  { username: "g5544332", exchange: "BingX" },
+  { username: 'a1234567', exchange: 'ATX' },
+  { username: 'b9876543', exchange: 'BingX' },
+  { username: 'c4567890', exchange: 'OKX' },
+  { username: 'd1122334', exchange: 'Bybit' },
+  { username: 'e5566778', exchange: 'MEXC' },
+  { username: 'f9988776', exchange: 'ATX' },
+  { username: 'g5544332', exchange: 'BingX' },
 ];
 
-// === LINK ZALO (THAY LINK CỦA BẠN VÀO ĐÂY) ===
-
-
-const BioTranVinh = () => {
+const Dienblog = () => {
   const [theme, setTheme] = useState('dark');
   const [tickerItems, setTickerItems] = useState([]);
-  const [showZaloPopup, setShowZaloPopup] = useState(false); // POPUP ZALO
-  const tickerRef = useRef(null);
-  const particlesRef = useRef(null);
+  const [showZaloPopup, setShowZaloPopup] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  // === THEME ===
   useEffect(() => {
     const saved = localStorage.getItem('theme');
     setTheme(saved || 'dark');
@@ -74,436 +82,363 @@ const BioTranVinh = () => {
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.className = theme === 'dark' ? 'dark' : '';
   }, [theme]);
 
-  // === PARTICLES ===
   useEffect(() => {
-    const container = particlesRef.current;
-    if (!container) return;
-    for (let i = 0; i < 70; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      p.style.left = `${Math.random() * 100}%`;
-      p.style.top = `${Math.random() * 100}%`;
-      p.style.animationDelay = `${Math.random() * 15}s`;
-      p.style.animationDuration = `${Math.random() * 10 + 10}s`;
-      p.style.opacity = Math.random() * 0.7 + 0.3;
-      container.appendChild(p);
-    }
-  }, []);
-
-  // === TICKER ===
-  useEffect(() => {
-    const initial = registrations.map((r, index) => ({
+    const initial = registrations.map((r, i) => ({
       ...r,
-      id: `${r.username}-${r.exchange}-${index}`,
-      masked: r.username[0] + '***' + r.username.slice(-4)
+      id: i,
+      masked: r.username[0] + '***' + r.username.slice(-4),
     }));
     setTickerItems([...initial, ...initial]);
 
     const interval = setInterval(() => {
       const r = registrations[Math.floor(Math.random() * registrations.length)];
-      const newItem = { 
-        ...r,  
-        id: `${r.username}-${r.exchange}-${Date.now()}`, 
-        masked: r.username[0] + '***' + r.username.slice(-4) 
-      };
-      setTickerItems(prev => {
-        const updated = [newItem, ...prev];
-        return updated.length > 30 ? updated.slice(0, 30) : updated;
-      });
-    }, 3000);
+      setTickerItems((prev) => [
+        {
+          ...r,
+          id: Date.now(),
+          masked: r.username[0] + '***' + r.username.slice(-4),
+        },
+        ...prev.slice(0, 29),
+      ]);
+    }, 3200);
+
     return () => clearInterval(interval);
   }, []);
 
+  const copyZalo = () => {
+    if (navigator && navigator.clipboard) {
+      navigator.clipboard.writeText('0964668846');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
   return (
     <>
-      <style jsx>{`
-        :root {
-          --bg: #0f172a;
-          --card: #1e293b;
-          --text: #e2e8f0;
-          --accent: #f59e0b;
-          --accent-hover: #d97706;
-          --green: #10b981;
-          --border: #334155;
-          --ticker-bg: rgba(15, 23, 42, 0.95);
-          --ticker-item-bg: rgba(30, 41, 59, 0.9);
-          --hot: #ef4444;
-          --star: #fbbf24;
-        }
-        [data-theme="light"] {
-          --bg: #f8fafc;
-          --card: #ffffff;
-          --text: #1e293b;
-          --accent: #ea580c;
-          --accent-hover: #c2410c;
-          --green: #16a34a;
-          --border: #e2e8f0;
-          --ticker-bg: rgba(248, 250, 252, 0.95);
-          --ticker-item-bg: rgba(255, 255, 255, 0.9);
-          --hot: #dc2626;
-          --star: #f59e0b;
+      <style jsx="true" global="true">{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;900&display=swap');
+        * {
+          font-family: 'Inter', sans-serif;
+          box-sizing: border-box;
         }
 
-        .particle {
-          position: absolute;
-          width: 4px; height: 4px;
-          background: var(--star);
-          border-radius: 50%;
-          box-shadow: 0 0 8px var(--star);
-          animation: float 15s ease-in-out infinite;
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
-          50% { transform: translateY(-30px) rotate(180deg); opacity: 1; }
-        }
-
-        .animate-scroll-left { animation: scroll-left 20s linear infinite; }
-        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        .btn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          padding: 12px 16px;
-          background: var(--accent);
+        body {
+          margin: 0;
+          background: #0f0f1a;
           color: white;
-          border-radius: 14px;
-          font-weight: 600;
-          font-size: 0.9rem;
-          text-decoration: none;
-          box-shadow: 0 6px 16px rgba(245,158,11,0.25);
+        }
+
+        .glass {
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+        }
+        .ticker {
+          animation: scroll 45s linear infinite;
+        }
+        @keyframes scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        .exchange-card {
+          transition: all 0.35s ease;
+          border: 1px solid rgba(255, 255, 255, 0.08);
           position: relative;
           overflow: hidden;
-          transition: all 0.3s ease;
-          min-height: 56px;
         }
-        .btn:hover {
-          background: var(--accent-hover);
-          transform: translateY(-3px) scale(1.03);
-          box-shadow: 0 10px 24px rgba(217,119,6,0.35);
+        .exchange-card:hover {
+          transform: translateY(-10px) scale(1.03);
+          border-color: #f59e0b;
+          box-shadow: 0 20px 40px rgba(245, 158, 11, 0.25);
         }
-        .btn::before {
-          content: '';
-          position: absolute;
-          top: 0; left: -100%;
-          width: 100%; height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-          transition: 0.6s;
-        }
-        .btn:hover::before { left: 100%; }
-
-        /* HOT RIBBON */
         .hot-badge {
           position: absolute;
-          top: -5px;
-          right: -12px;
-          background: var(--hot);
+          top: 8px;
+          right: 8px;
+          background: #ef4444;
           color: white;
-          font-size: 0.7rem;
-          font-weight: 800;
-          padding: 6px 16px;
-          border-radius: 0 14px 0 14px;
-          transform: rotate(45deg);
-          transform-origin: center;
-          box-shadow: 
-            0 0 16px rgba(239, 68, 68, 0.8),
-            0 0 0 3px white,
-            0 0 0 4px var(--hot);
-          animation: ribbon-pulse 1.8s infinite;
-          z-index: 20;
-          white-space: nowrap;
-          pointer-events: none;
-        }
-        @keyframes ribbon-pulse {
-          0%, 100% { transform: rotate(45deg) scale(1); }
-          50% { transform: rotate(45deg) scale(1.1); }
-        }
-
-        .stats-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          background: rgba(16,185,129,0.2);
-          color: var(--green);
-          padding: 6px 12px;
+          font-size: 9px;
+          font-weight: 900;
+          padding: 4px 9px;
           border-radius: 999px;
-          font-size: 0.9rem;
-          font-weight: 600;
-          border: 1px solid rgba(16,185,129,0.4);
+          box-shadow: 0 0 15px rgba(239, 68, 68, 0.8);
+          animation: pulse 2s infinite;
         }
-
-        /* POPUP ANIMATION */
-        @keyframes popup {
-          from { opacity: 0; transform: scale(0.8); }
-          to { opacity: 1; transform: scale(1); }
-        }
-
-        @media (max-width: 768px) {
-          .btn { 
-            padding: 10px 12px;
-            font-size: 0.85rem;
-            gap: 8px;
-            min-height: 50px;
+        @keyframes pulse {
+          0%,
+          100% {
+            transform: scale(1);
           }
-          .hot-badge { 
-            top: -10px; 
-            right: -10px; 
-            font-size: 0.6rem; 
-            padding: 4px 12px;
-            box-shadow: 
-              0 0 12px rgba(239, 68, 68, 0.7),
-              0 0 0 2px white,
-              0 0 0 3px var(--hot);
+          50% {
+            transform: scale(1.15);
           }
         }
       `}</style>
 
-      <div className="min-h-screen overflow-x-hidden" style={{ background: 'var(--bg)', color: 'var(--text)' }}>
+      <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950">
+        {/* Animated Background */}
+        <div className="fixed inset-0 opacity-30 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 via-pink-600/10 to-emerald-600/20" />
+        </div>
 
-        {/* NÚT SÁNG/TỐI */}
+        {/* Theme Toggle */}
         <button
-          onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
-          className="fixed top-5 right-5 z-50 w-12 h-12 rounded-full flex items-center justify-center shadow-lg border"
-          style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
+          onClick={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
+          className="fixed top-6 right-6 z-50 w-12 h-12 rounded-2xl glass bg-white/10 border border-white/20 flex items-center justify-center shadow-2xl hover:scale-110 transition"
         >
-          {theme === 'dark' ? <Sun className="w-5 h-5" style={{ color: 'var(--accent)' }} /> : <Moon className="w-5 h-5" style={{ color: 'var(--accent)' }} />}
+          {theme === 'dark' ? (
+            <Sun className="w-6 h-6 text-amber-400" />
+          ) : (
+            <Moon className="w-6 h-6 text-slate-700" />
+          )}
         </button>
 
-        {/* PARTICLES */}
-        <div ref={particlesRef} className={`fixed inset-0 pointer-events-none z-0 ${theme === 'light' ? 'opacity-30' : ''} transition-opacity`} />
-
-        {/* HEADER */}
-        <header className="py-16 text-center border-b" style={{ background: theme === 'dark' ? 'linear-gradient(135deg, #1e293b, #0f172a)' : 'linear-gradient(135deg, #fef3c7, #fde68a)', borderColor: 'var(--border)' }}>
-          <h1 className="text-5xl md:text-7xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
-            VID Hoàn Phí
-          </h1>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: theme === 'dark' ? '#94a3b8' : '#475569' }}>
-            Đồng hành cùng bạn trên hành trình đầu tư Crypto an toàn & hiệu quả tại{' '}
-            <a href="https://vidhoanphi.com" target="_blank"  rel="noreferrer" style={{ color: 'var(--accent)', fontWeight: 600 }} className="underline">
-              vidhoanphi.com
-            </a>
-          </p>
-          <div className="mt-4">
-            <span className="stats-badge">
-              <Star className="w-4 h-4 fill-current" />
-              Hơn 12.847 người đã nhận thưởng
-            </span>
+        {/* Hero */}
+        <header className="relative pt-32 pb-20 text-center px-6">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-6xl md:text-8xl font-black mb-4 bg-gradient-to-r from-amber-400 via-orange-500 to-pink-500 bg-clip-text text-transparent leading-tight">
+              VID HOÀN PHÍ
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 font-medium">
+              Đăng ký sàn nhận thưởng tới{' '}
+              <span className="text-amber-400 font-bold">500$+</span> • Hoàn phí cao nhất
+            </p>
+            <div className="mt-10 inline-flex items-center gap-4 bg-white/10 glass px-8 py-5 rounded-2xl border border-white/20">
+              <Trophy className="w-9 h-9 text-amber-400" />
+              <span className="text-3xl font-bold">12.847+</span>
+              <span className="text-gray-400">người đã nhận thưởng</span>
+            </div>
           </div>
         </header>
 
-        {/* CARD CHÍNH */}
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-8 py-12">
-          <div className="rounded-3xl p-6 md:p-10 shadow-2xl border relative overflow-hidden"
-               style={{ background: 'var(--card)', borderColor: 'var(--border)' }}>
-
-            {/* TICKER */}
-            <div className="absolute top-0 left-0 w-full overflow-hidden py-2 border-b"
-                 style={{ background: 'var(--ticker-bg)', backdropFilter: 'blur(10px)', borderColor: 'var(--border)' }}>
-              <div ref={tickerRef} className="flex animate-scroll-left whitespace-nowrap">
-                {tickerItems.map(item => (
-                  <div key={item.id} className="inline-flex items-center gap-2 px-5 py-1.5 rounded-lg border shadow-sm mx-6 flex-shrink-0 text-sm"
-                       style={{ background: 'var(--ticker-item-bg)', borderColor: 'rgba(16,185,129,0.3)', color: 'var(--green)' }}>
-                    <Zap className="w-4 h-4 animate-pulse" style={{ color: 'var(--accent)' }} />
-                    <span className="font-bold">{item.masked}</span>
-                    <span>đã đăng ký</span>
-                    <span className="font-semibold" style={{ color: 'var(--accent)' }}>{item.exchange}</span>
-                  </div>
-                ))}
+        {/* Live Ticker */}
+        <div className="bg-black/40 glass border-y border-white/10 py-4 overflow-hidden">
+          <div className="flex ticker gap-16 text-sm">
+            {[...tickerItems, ...tickerItems].map((item, i) => (
+              <div key={i} className="flex items-center gap-3 whitespace-nowrap">
+                <Zap className="w-5 h-5 text-amber-400 animate-pulse" />
+                <span className="font-bold text-amber-300">{item.masked}</span>
+                <span className="text-gray-400">vừa đăng ký</span>
+                <span className="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full font-bold text-xs">
+                  {item.exchange}
+                </span>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
 
-            <div className="pt-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-3">
-                Chỉ <span style={{ color: 'var(--accent)' }}>3 phút</span> – Nhận ngay <span style={{ color: '#10b981' }}>500$ thưởng!</span>
-              </h2>
-              <p className="max-w-2xl mx-auto mb-8 text-base" style={{ color: theme === 'dark' ? '#94a3b8' : '#64748b' }}>
-                Hỗ trợ đăng ký sàn uy tín • Nhận thưởng cao • Tài liệu miễn phí
-              </p>
-
-              {/* CỘNG ĐỒNG VIP */}
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-10">
-
-                {/* ZALO VIP - POPUP */}
-                <div className="relative flex-1 min-w-[280px]">
-                  <button
-                    onClick={() => setShowZaloPopup(true)}
-                    className="group relative overflow-hidden rounded-2xl p-6 bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 w-full text-left flex items-center gap-4"
-                  >
-                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
-                    <div className="w-14 h-14 rounded-full bg-white/25 flex items-center justify-center backdrop-blur-sm">
-                      <MessageCircle className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold flex items-center gap-2">
-                        Zalo VIP
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-yellow-400 text-black animate-pulse">
-                          <Star className="w-3 h-3 fill-current mr-1" /> LIVE
-                        </span>
-                      </div>
-                      <p className="text-sm opacity-90">Cộng đồng 24/7 • Hỗ trợ 1:1</p>
-                    </div>
-                  </button>
-
-                  {/* POPUP ZALO */}
-                  {showZaloPopup && (
-                    <div 
-                      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-                      onClick={() => setShowZaloPopup(false)}
-                    >
-                      <div 
-                        className="bg-white dark:bg-gray-900 rounded-3xl p-8 max-w-sm w-full shadow-2xl"
-                        onClick={(e) => e.stopPropagation()}
-                        style={{ animation: 'popup 0.3s ease-out' }}
-                      >
-                        <div className="text-center mb-6">
-                          <h3 className="text-2xl font-bold text-emerald-600 mb-2">Tham gia Zalo VIP</h3>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">Chọn 1 trong 2 cách dưới đây</p>
-                        </div>
-
-                        {/* NÚT JOIN */}
-                        <a
-                          href="https://zalo.me/g/rsbqdm035"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full mb-6 px-6 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-2xl flex items-center justify-center gap-3 transition-all hover:scale-105 shadow-lg"
-                        >
-                          <MessageCircle className="w-6 h-6" />
-                          Tham gia nhóm Zalo ngay 1
-                        </a>
-
-                        {/* QR CODE */}
-                        <div className="text-center">
-                          <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Hoặc quét mã QR</p>
-                          <div className="inline-block p-4 bg-gray-100 dark:bg-gray-800 rounded-2xl">
-                            <img 
-                              src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://zalo.me/g/rsbqdm035"
-                              alt="QR Zalo VIP" 
-                              className="w-48 h-48"
-                            />
-                          </div>
-                          <p className="text-xs text-gray-500 mt-3">Quét để tham gia nhóm !</p>
-                           {/* SỐ ZALO + BIỂU TƯỢNG COPY */}
-<div className="mt-4 text-center">
-  <p className="text-xs text-gray-500 mb-2">Hoặc liên hệ trực tiếp:</p>
-  <div className="inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-emerald-500/10 to-teal-600/10 rounded-full border border-emerald-500/30">
-    <MessageCircle className="w-5 h-5 text-emerald-600" />
-    <span className="font-bold text-emerald-700">Zalo: 0964.66.88.46</span>
-    <button
-      onClick={() => {
-        navigator.clipboard.writeText('0964668846');
-        const btn = document.getElementById('copy-zalo-icon');
-        const icon = btn.querySelector('svg');
-        const text = btn.querySelector('span');
-        icon.classList.add('hidden');
-        text.classList.remove('hidden');
-        btn.classList.add('copied');
-        setTimeout(() => {
-          icon.classList.remove('hidden');
-          text.classList.add('hidden');
-          btn.classList.remove('copied');
-        }, 2000);
-      }}
-      id="copy-zalo-icon"
-      className="ml-2 p-1.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-md transition-all duration-300 hover:scale-110"
-      title="Copy số Zalo"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-      </svg>
-      <span className="hidden text-xs font-bold">Đã copy!</span>
-    </button>
-  </div>
-</div>
-                        </div>
-
-                        {/* NÚT ĐÓNG */}
-                        <button
-                          onClick={() => setShowZaloPopup(false)}
-                          className="mt-6 w-full py-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 font-medium"
-                        >
-                          Đóng
-                        </button>
-                      </div>
-                    </div>
-                  )}
+        {/* TRUNG TÂM HỖ TRỢ - ZALO / TELEGRAM (NHÓM) */}
+        <div className="max-w-5xl mx-auto px-6 py-12">
+          <div className="glass bg-white/5 border border-white/10 rounded-3xl px-6 py-7 md:px-10 md:py-9 shadow-2xl">
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 md:gap-10">
+              {/* Text bên trái */}
+              <div className="text-center md:text-left space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/40">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-xs font-semibold text-emerald-300 uppercase tracking-widest">
+                    Support VIP 1-1
+                  </span>
                 </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white">
+                  Cần hỗ trợ cài sàn, nhận thưởng, hoàn phí?
+                </h3>
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                  Đội ngũ <span className="font-semibold text-amber-300">VID HOÀN PHÍ</span> hỗ trợ trực tiếp,
+                  kiểm tra thưởng, tối ưu hoàn phí cho bạn từ A–Z.
+                </p>
+                <ul className="mt-2 space-y-1 text-xs md:text-sm text-gray-400">
+  <li className="flex items-start gap-2">
+    <span className="mt-0.5 text-amber-400">•</span>
+    <span>Hướng dẫn đăng ký &amp; KYC đúng chuẩn để không mất thưởng</span>
+  </li>
+  <li className="flex items-start gap-2">
+    <span className="mt-0.5 text-amber-400">•</span>
+    <span>Setup hoàn phí, tracking thưởng từng sàn</span>
+  </li>
+  <li className="flex items-start gap-2">
+    <span className="mt-0.5 text-amber-400">•</span>
+    <span>Hỏi gì đáp nấy – ưu tiên khách trong nhóm Zalo / Telegram</span>
+  </li>
+</ul>
 
-                {/* TELEGRAM PRO */}
-                <a 
-                  href="https://t.me/vidhoanphi68" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="group relative overflow-hidden rounded-2xl p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex-1 min-w-[280px]"
+              </div>
+
+              {/* Nút nhóm bên phải */}
+              <div className="flex flex-col gap-3 w-full md:w-auto">
+                <button
+                  onClick={() => setShowZaloPopup(true)}
+                  className="group flex items-center justify-between gap-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-4 rounded-2xl font-bold shadow-xl hover:shadow-emerald-500/60 hover:scale-[1.02] transition-all duration-300"
                 >
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-white/25 flex items-center justify-center backdrop-blur-sm">
-                      <Send className="w-8 h-8 text-white" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center">
+                      <MessageCircle className="w-6 h-6" />
                     </div>
-                    <div className="text-left">
-                      <div className="text-lg font-bold flex items-center gap-2">
-                        Telegram PRO
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-pink-500 text-white">
-                          <Zap className="w-3 h-3 mr-1" /> Miễn phí
-                        </span>
-                      </div>
-                      <p className="text-sm opacity-90">Tài liệu Trade • Signal • A-Z</p>
+                    <div className="flex flex-col items-start">
+                      <span>Zalo VIP 24/7</span>
+                      <span className="text-xs font-normal text-emerald-100/90">
+                        Hỗ trợ nhanh – kiểm tra thưởng trực tiếp
+                      </span>
                     </div>
                   </div>
-                  <div className="mt-3 flex items-center gap-2 text-xs font-medium">
-                    <Globe className="w-4 h-4" />
-                    <span>Nhận ngay bộ tài liệu 2025</span>
-                  </div>
-                </a>
-              </div>
+                  <span className="ml-2 px-2.5 py-0.5 bg-yellow-400 text-black text-xs rounded-full font-semibold flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping" />
+                    LIVE
+                  </span>
+                </button>
 
-              {/* NÚT SÀN GIAO DỊCH */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-10">
-                {exchanges.map((ex, i) => (
-                  <a 
-                    key={i} 
-                    href={ex.link} 
-                    target="_blank" 
-                     rel="noreferrer"
-                    className="btn group relative overflow-visible"
-                  >
-                    {ex.hot && <div className="hot-badge">HOT</div>}
-                    <img src={ex.img} alt={ex.name} className="w-7 h-7 rounded-md" />
-                    <div className="text-left text-white text-sm">
-                      {ex.name} - {ex.reward}
-                      <span className="block opacity-80">Hoàn {ex.fee}</span>
+                <a
+                  href="https://t.me/vidhoanphi68"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between gap-3 bg-gradient-to-r from-blue-600 to-purple-700 text-white px-6 py-4 rounded-2xl font-bold shadow-xl hover:shadow-purple-500/60 hover:scale-[1.02] transition-all duration-300"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center">
+                      <Send className="w-6 h-6" />
                     </div>
-                  </a>
-                ))}
-              </div>
-
-              {/* SOCIAL */}
-              <div className="flex justify-center gap-4">
-                <a href="https://vidhoanphi.com" className="w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:-translate-y-1 hover:scale-110"
-                   style={{ background: 'linear-gradient(45deg, #f09433, #e6683c)', color: 'white' }}>
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="https://vidhoanphi.com" className="w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:-translate-y-1 hover:scale-110"
-                   style={{ background: 'linear-gradient(45deg, #ff0000, #cc0000)', color: 'white' }}>
-                  <Youtube className="w-5 h-5" />
-                </a>
-                <a href="https://vidhoanphi.com" className="w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:-translate-y-1 hover:scale-110"
-                   style={{ background: 'linear-gradient(45deg, #10b981, #059669)', color: 'white' }}>
-                  <Globe className="w-5 h-5" />
+                    <div className="flex flex-col items-start">
+                      <span>Telegram PRO</span>
+                      <span className="text-xs font-normal text-blue-100/90">
+                        Cập nhật kèo, ưu đãi &amp; event sớm nhất
+                      </span>
+                    </div>
+                  </div>
+                  <span className="ml-2 px-2.5 py-0.5 bg-pink-500 text-white text-xs rounded-full font-semibold">
+                    MIỄN PHÍ
+                  </span>
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* FOOTER */}
-        <footer className="text-center py-6 border-t mt-16" style={{ background: theme === 'dark' ? '#0f172a' : '#f1f5f9', color: theme === 'dark' ? '#64748b' : '#475569', borderColor: 'var(--border)' }}>
-          <p className="text-sm">
-            © 2025 <strong style={{ color: theme === 'dark' ? 'white' : '#1e293b' }}>VID HOÀN PHÍ</strong> – <span style={{ color: 'var(--accent)' }}>Phát Tài Phát Lộc!</span>
+        {/* Sàn giao dịch */}
+        <div className="max-w-6xl mx-auto px-6 pb-24">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-14 text-white">
+            Chọn sàn — Nhận thưởng ngay
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {exchanges.map((ex) => (
+              <a
+                key={ex.name}
+                href={ex.link}
+                target="_blank"
+                rel="noreferrer"
+                className="exchange-card group relative bg-white/5 glass rounded-3xl p-6 text-center border border-white/10 hover:bg-white/10 transition-all"
+              >
+                {ex.hot && <div className="hot-badge">Hoàn 50%</div>}
+                <img
+                  src={ex.img}
+                  alt={ex.name}
+                  className="w-16 h-16 mx-auto mb-4 rounded-2xl shadow-2xl"
+                />
+                <h3 className="font-bold text-lg text-white mb-1">{ex.name}</h3>
+                <p className="text-amber-400 text-sm font-bold">{ex.reward}</p>
+                <ArrowRight className="w-6 h-6 mx-auto mt-4 text-gray-500 group-hover:text-amber-400 group-hover:translate-x-2 transition-all" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Popup Zalo */}
+        {showZaloPopup && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/70 backdrop-blur-xl"
+            onClick={() => setShowZaloPopup(false)}
+          >
+            <div
+              className="bg-white dark:bg-gray-900 rounded-3xl p-10 max-w-md w-full shadow-3xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">
+                Tham gia Zalo VIP ngay!
+              </h3>
+
+              <a
+                href="https://zalo.me/g/rsbqdm035"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full mb-6 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-xl py-5 rounded-2xl flex items-center justify-center gap-4 hover:scale-105 transition-all shadow-2xl"
+              >
+                <MessageCircle className="w-8 h-8" />
+                Tham gia nhóm Zalo
+              </a>
+
+              <div className="text-center mb-6">
+                <p className="text-gray-600 dark:text-gray-400 mb-4 font-medium">
+                  Hoặc quét mã QR
+                </p>
+                <img
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://zalo.me/g/rsbqdm035"
+                  alt="QR Zalo"
+                  className="mx-auto rounded-2xl shadow-2xl"
+                />
+              </div>
+
+              <div className="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/50 dark:to-teal-900/50 rounded-2xl text-center">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                  Liên hệ trực tiếp:
+                </p>
+                <div className="flex items-center justify-center gap-4">
+                  <span className="font-bold text-xl text-emerald-700">
+                    0964.66.88.46
+                  </span>
+                  <button
+                    onClick={copyZalo}
+                    className="p-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl transition hover:scale-110"
+                  >
+                    {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+                  </button>
+                </div>
+                {copied && (
+                  <p className="text-emerald-600 font-bold mt-3 text-sm">
+                    Đã copy số Zalo!
+                  </p>
+                )}
+              </div>
+
+              <button
+                onClick={() => setShowZaloPopup(false)}
+                className="mt-8 w-full py-3 text-gray-500 hover:text-gray-700 font-medium"
+              >
+                Đóng
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Footer */}
+        <footer className="py-12 text-center border-t border-white/10">
+          <div className="flex justify-center gap-6 mb-6">
+            <a
+              href="https://vidhoanphi.com"
+              className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-orange-500 flex items-center justify-center hover:scale-110 transition"
+            >
+              <Instagram className="w-7 h-7 text-white" />
+            </a>
+            <a
+              href="https://vidhoanphi.com"
+              className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center hover:scale-110 transition"
+            >
+              <Youtube className="w-7 h-7 text-white" />
+            </a>
+            <a
+              href="https://vidhoanphi.com"
+              className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center hover:scale-110 transition"
+            >
+              <Globe className="w-7 h-7 text-white" />
+            </a>
+          </div>
+          <p className="text-gray-500 text-sm">
+            © 2025 <strong className="text-white">VID HOÀN PHÍ</strong> — Phát Tài Phát Lộc!
           </p>
         </footer>
       </div>
@@ -511,4 +446,4 @@ const BioTranVinh = () => {
   );
 };
 
-export default BioTranVinh;
+export default Dienblog;
